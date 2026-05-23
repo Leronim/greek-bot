@@ -54,10 +54,10 @@ async def quiz_answer(callback: CallbackQuery, session: AsyncSession, db_user: U
     if word is None:
         await callback.message.edit_text("Слово не найдено.", reply_markup=main_menu_keyboard())
     elif is_correct:
-        await callback.message.edit_text(f"✅ Верно!\n\n🇬🇷 {word.greek}\n🇷🇺 {word.ru}", reply_markup=after_quiz_keyboard())
+        await callback.message.edit_text(f"✅ Верно!\n\n🇬🇷 {word.greek}\n🇷🇺 {word.ru}", reply_markup=after_quiz_keyboard(word.id))
     else:
         await callback.message.edit_text(
             f"❌ Неверно.\n\nПравильный ответ:\n🇬🇷 {word.greek}\n🇷🇺 {word.ru}",
-            reply_markup=after_quiz_keyboard(),
+            reply_markup=after_quiz_keyboard(word.id),
         )
     await callback.answer()

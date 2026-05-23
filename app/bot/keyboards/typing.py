@@ -14,8 +14,12 @@ def typing_mode_keyboard() -> InlineKeyboardMarkup:
 
 def after_typing_keyboard(word_id: int | None = None) -> InlineKeyboardMarkup:
     example_callback = f"typing:example:{word_id}" if word_id is not None else "typing:example"
+    audio_row = []
+    if word_id is not None:
+        audio_row = [[InlineKeyboardButton(text="🔊 Озвучить", callback_data=f"audio:word:{word_id}")]]
     return InlineKeyboardMarkup(
-        inline_keyboard=[
+        inline_keyboard=audio_row
+        + [
             [InlineKeyboardButton(text="Следующее", callback_data="typing:next")],
             [InlineKeyboardButton(text="Показать пример", callback_data=example_callback)],
             [InlineKeyboardButton(text="В меню", callback_data="menu:main")],

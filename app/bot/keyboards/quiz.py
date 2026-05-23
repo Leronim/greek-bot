@@ -10,9 +10,13 @@ def quiz_keyboard(word_id: int, correct: str, options: list[str]) -> InlineKeybo
     return InlineKeyboardMarkup(inline_keyboard=rows)
 
 
-def after_quiz_keyboard() -> InlineKeyboardMarkup:
+def after_quiz_keyboard(word_id: int | None = None) -> InlineKeyboardMarkup:
+    audio_row = []
+    if word_id is not None:
+        audio_row = [[InlineKeyboardButton(text="🔊 Озвучить", callback_data=f"audio:word:{word_id}")]]
     return InlineKeyboardMarkup(
-        inline_keyboard=[
+        inline_keyboard=audio_row
+        + [
             [InlineKeyboardButton(text="Следующий тест", callback_data="quiz:start")],
             [InlineKeyboardButton(text="В меню", callback_data="menu:main")],
         ]

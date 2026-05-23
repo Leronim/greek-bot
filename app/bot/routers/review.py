@@ -15,6 +15,7 @@ router = Router()
 def review_keyboard(word_id: int) -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(
         inline_keyboard=[
+            [InlineKeyboardButton(text="🔊 Озвучить", callback_data=f"audio:word:{word_id}")],
             [InlineKeyboardButton(text="Показать ответ", callback_data=f"review:show:{word_id}")],
             [InlineKeyboardButton(text="В меню", callback_data="menu:main")],
         ]
@@ -24,6 +25,7 @@ def review_keyboard(word_id: int) -> InlineKeyboardMarkup:
 def review_result_keyboard(word_id: int) -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(
         inline_keyboard=[
+            [InlineKeyboardButton(text="🔊 Озвучить", callback_data=f"audio:word:{word_id}")],
             [
                 InlineKeyboardButton(text="✅ Знал", callback_data=f"review:knew:{word_id}"),
                 InlineKeyboardButton(text="❌ Не знал", callback_data=f"review:miss:{word_id}"),

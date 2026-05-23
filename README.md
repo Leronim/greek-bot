@@ -64,6 +64,16 @@ Open `http://127.0.0.1:8000` and log in with `ADMIN_WEB_PASSWORD` from `.env`.
 
 On the server, keep it bound to `127.0.0.1` and expose it through Nginx + HTTPS or an SSH tunnel.
 
+## Word Audio
+
+Greek pronunciation audio is generated through TTS into mp3 files:
+
+```bash
+python -m app.scripts.generate_audio
+```
+
+Files are stored in `data/audio/` and are not committed to Git. On the server, the deploy script keeps existing audio files and generates missing audio after the dictionary sync.
+
 ## Auto Deploy
 
 Pushes to `main` can deploy automatically through GitHub Actions. Add these repository secrets:

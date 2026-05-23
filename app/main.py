@@ -6,7 +6,7 @@ from aiogram import Bot, Dispatcher
 
 from app.bot.middlewares.db import DbSessionMiddleware
 from app.bot.middlewares.user import UserMiddleware
-from app.bot.routers import admin, lesson, menu, quiz, review, settings as settings_router, start, stats, typing
+from app.bot.routers import admin, audio, lesson, menu, quiz, review, settings as settings_router, start, stats, typing
 from app.config import settings
 from app.database import async_session_factory, create_db_schema
 from app.services.import_service import import_words_if_empty
@@ -36,6 +36,7 @@ async def main() -> None:
 
     dp.include_router(start.router)
     dp.include_router(menu.router)
+    dp.include_router(audio.router)
     dp.include_router(lesson.router)
     dp.include_router(review.router)
     dp.include_router(typing.router)

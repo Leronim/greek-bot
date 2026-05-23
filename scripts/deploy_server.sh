@@ -18,6 +18,10 @@ fi
 if [ -f "$APP_DIR/greek_bot.db" ]; then
   cp "$APP_DIR/greek_bot.db" /tmp/greek_bot.db.backup
 fi
+if [ -d "$APP_DIR/data/audio" ]; then
+  rm -rf /tmp/greek-bot-audio.backup
+  cp -a "$APP_DIR/data/audio" /tmp/greek-bot-audio.backup
+fi
 
 for item in "$APP_DIR"/* "$APP_DIR"/.[!.]* "$APP_DIR"/..?*; do
   [ -e "$item" ] || continue
@@ -37,6 +41,11 @@ fi
 if [ -f /tmp/greek_bot.db.backup ]; then
   mv /tmp/greek_bot.db.backup "$APP_DIR/greek_bot.db"
 fi
+if [ -d /tmp/greek-bot-audio.backup ]; then
+  mkdir -p "$APP_DIR/data"
+  rm -rf "$APP_DIR/data/audio"
+  mv /tmp/greek-bot-audio.backup "$APP_DIR/data/audio"
+fi
 
 cd "$APP_DIR"
 
@@ -54,6 +63,7 @@ fi
 .venv/bin/python -m pip install -r requirements.txt
 .venv/bin/alembic upgrade head
 .venv/bin/python -m app.scripts.sync_dictionary
+.venv/bin/python -m app.scripts.generate_audio || echo "Audio generation failed, deploy continues."
 
 systemctl restart "$SERVICE_NAME"
 systemctl --no-pager --full status "$SERVICE_NAME"
