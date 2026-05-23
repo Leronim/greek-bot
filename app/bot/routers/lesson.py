@@ -8,7 +8,8 @@ from app.bot.keyboards.lesson import lesson_card_keyboard, lesson_continue_keybo
 from app.bot.keyboards.main_menu import main_menu_keyboard
 from app.models import User
 from app.repositories import settings_repo, words_repo
-from app.services.progress_service import mark_hard, mark_manual_result
+from app.services.audio_service import delete_transient_audio
+from app.services.progress_service import mark_manual_result
 
 router = Router()
 
@@ -34,6 +35,7 @@ async def lesson_command(message: Message, session: AsyncSession, db_user: User)
 
 @router.callback_query(F.data == "lesson:start")
 async def lesson_start(callback: CallbackQuery, session: AsyncSession, db_user: User) -> None:
+    await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     settings = await settings_repo.get_settings(session, db_user.id)
     word = await words_repo.get_new_word(session, db_user.id, settings.level_mode)
     if word is None:
@@ -65,22 +67,16 @@ async def lesson_show(callback: CallbackQuery, session: AsyncSession) -> None:
 
 @router.callback_query(F.data.startswith("lesson:knew:"))
 async def lesson_knew(callback: CallbackQuery, session: AsyncSession, db_user: User) -> None:
+    await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     word_id = int(callback.data.rsplit(":", 1)[-1])
     await mark_manual_result(session, db_user.id, word_id, knew=True)
     await callback.message.edit_text("✅ Отмечено как знакомое.", reply_markup=lesson_continue_keyboard())
     await callback.answer()
 
 
-@router.callback_query(F.data.startswith("lesson:hard:"))
-async def lesson_hard(callback: CallbackQuery, session: AsyncSession, db_user: User) -> None:
-    word_id = int(callback.data.rsplit(":", 1)[-1])
-    await mark_hard(session, db_user.id, word_id)
-    await callback.message.edit_text("⭐ Добавлено в сложные.", reply_markup=lesson_continue_keyboard())
-    await callback.answer()
-
-
 @router.callback_query(F.data.startswith("lesson:again:"))
 async def lesson_again(callback: CallbackQuery, session: AsyncSession, db_user: User) -> None:
+    await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     word_id = int(callback.data.rsplit(":", 1)[-1])
     await mark_manual_result(session, db_user.id, word_id, knew=False)
     await callback.message.edit_text("Слово вернётся на повторение позже.", reply_markup=lesson_continue_keyboard())

@@ -41,3 +41,21 @@ async def play_typing_word_audio(callback: CallbackQuery, session: AsyncSession)
     audio_message = await callback.message.answer_audio(audio=audio, title=word.greek, performer="Greek TTS")
     remember_transient_audio(callback.message.chat.id, callback.message.message_id, audio_message.message_id)
     await callback.answer()
+
+
+@router.callback_query(F.data.startswith("audio:lesson:word:"))
+async def play_lesson_word_audio(callback: CallbackQuery, session: AsyncSession) -> None:
+    word_id = int(callback.data.rsplit(":", 1)[-1])
+    word = await words_repo.get_word(session, word_id)
+    if word is None:
+        await callback.answer("Слово не найдено", show_alert=True)
+        return
+
+    audio = word_audio_file(word)
+    if audio is None:
+        await callback.answer("Аудио ещё не создано", show_alert=True)
+        return
+
+    audio_message = await callback.message.answer_audio(audio=audio, title=word.greek, performer="Greek TTS")
+    remember_transient_audio(callback.message.chat.id, callback.message.message_id, audio_message.message_id)
+    await callback.answer()
