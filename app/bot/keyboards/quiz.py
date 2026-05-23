@@ -13,7 +13,7 @@ def quiz_keyboard(word_id: int, correct: str, options: list[str]) -> InlineKeybo
 def after_quiz_keyboard(word_id: int | None = None) -> InlineKeyboardMarkup:
     audio_row = []
     if word_id is not None:
-        audio_row = [[InlineKeyboardButton(text="🔊 Озвучить", callback_data=f"audio:word:{word_id}")]]
+        audio_row = [[InlineKeyboardButton(text="🔊 Озвучить", callback_data=f"audio:quiz:word:{word_id}")]]
     return InlineKeyboardMarkup(
         inline_keyboard=audio_row
         + [

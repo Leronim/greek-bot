@@ -7,6 +7,7 @@ from aiogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMar
 from app.bot.keyboards.main_menu import main_menu_keyboard
 from app.models import User
 from app.repositories import settings_repo, words_repo
+from app.services.audio_service import delete_transient_audio
 from app.services.progress_service import mark_manual_result
 
 router = Router()
@@ -15,7 +16,7 @@ router = Router()
 def review_keyboard(word_id: int) -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(
         inline_keyboard=[
-            [InlineKeyboardButton(text="🔊 Озвучить", callback_data=f"audio:word:{word_id}")],
+            [InlineKeyboardButton(text="🔊 Озвучить", callback_data=f"audio:review:word:{word_id}")],
             [InlineKeyboardButton(text="Показать ответ", callback_data=f"review:show:{word_id}")],
             [InlineKeyboardButton(text="В меню", callback_data="menu:main")],
         ]
@@ -25,7 +26,7 @@ def review_keyboard(word_id: int) -> InlineKeyboardMarkup:
 def review_result_keyboard(word_id: int) -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(
         inline_keyboard=[
-            [InlineKeyboardButton(text="🔊 Озвучить", callback_data=f"audio:word:{word_id}")],
+            [InlineKeyboardButton(text="🔊 Озвучить", callback_data=f"audio:review:word:{word_id}")],
             [
                 InlineKeyboardButton(text="✅ Знал", callback_data=f"review:knew:{word_id}"),
                 InlineKeyboardButton(text="❌ Не знал", callback_data=f"review:miss:{word_id}"),
@@ -57,6 +58,7 @@ async def review_command(message: Message, session: AsyncSession, db_user: User)
 
 @router.callback_query(F.data == "review:start")
 async def review_start(callback: CallbackQuery, session: AsyncSession, db_user: User) -> None:
+    await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     settings = await settings_repo.get_settings(session, db_user.id)
     word = await words_repo.get_due_word(session, db_user.id, settings.level_mode)
     if word is None:
@@ -72,6 +74,7 @@ async def review_start(callback: CallbackQuery, session: AsyncSession, db_user: 
 
 @router.callback_query(F.data.startswith("review:show:"))
 async def review_show(callback: CallbackQuery, session: AsyncSession) -> None:
+    await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     word_id = int(callback.data.rsplit(":", 1)[-1])
     word = await words_repo.get_word(session, word_id)
     if word is None:
@@ -83,6 +86,7 @@ async def review_show(callback: CallbackQuery, session: AsyncSession) -> None:
 
 @router.callback_query(F.data.startswith("review:knew:"))
 async def review_knew(callback: CallbackQuery, session: AsyncSession, db_user: User) -> None:
+    await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     word_id = int(callback.data.rsplit(":", 1)[-1])
     await mark_manual_result(session, db_user.id, word_id, knew=True)
     await callback.message.edit_text("✅ Принято.", reply_markup=review_continue_keyboard())
@@ -91,6 +95,7 @@ async def review_knew(callback: CallbackQuery, session: AsyncSession, db_user: U
 
 @router.callback_query(F.data.startswith("review:miss:"))
 async def review_miss(callback: CallbackQuery, session: AsyncSession, db_user: User) -> None:
+    await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     word_id = int(callback.data.rsplit(":", 1)[-1])
     await mark_manual_result(session, db_user.id, word_id, knew=False)
     await callback.message.edit_text("❌ Слово вернётся на повторение позже.", reply_markup=review_continue_keyboard())

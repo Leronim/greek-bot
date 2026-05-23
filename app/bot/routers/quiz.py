@@ -8,6 +8,7 @@ from app.bot.keyboards.main_menu import main_menu_keyboard
 from app.bot.keyboards.quiz import after_quiz_keyboard, quiz_keyboard
 from app.models import User
 from app.repositories import words_repo
+from app.services.audio_service import delete_transient_audio
 from app.services.quiz_service import apply_quiz_result, create_quiz
 
 router = Router()
@@ -20,6 +21,7 @@ async def quiz_command(message: Message, session: AsyncSession, db_user: User) -
 
 @router.callback_query(F.data == "quiz:start")
 async def quiz_start(callback: CallbackQuery, session: AsyncSession, db_user: User) -> None:
+    await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     word, direction, options = await create_quiz(session, db_user.id)
     if word is None or direction is None:
         await callback.message.edit_text("Нет слов для теста.", reply_markup=main_menu_keyboard())
