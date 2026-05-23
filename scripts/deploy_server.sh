@@ -53,6 +53,7 @@ fi
 .venv/bin/python -m pip install --upgrade pip
 .venv/bin/python -m pip install -r requirements.txt
 .venv/bin/alembic upgrade head
+.venv/bin/python -m app.scripts.sync_dictionary
 
 systemctl restart "$SERVICE_NAME"
 systemctl --no-pager --full status "$SERVICE_NAME"

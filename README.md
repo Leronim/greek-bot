@@ -75,3 +75,10 @@ Pushes to `main` can deploy automatically through GitHub Actions. Add these repo
 - `DEPLOY_SSH_KEY`: private SSH key that can connect to the server
 
 The workflow uploads the code, preserves `.env`, `greek_bot.db`, and `.venv`, installs dependencies, runs migrations, and restarts `greek-bot.service`.
+It also syncs `greek_bot.db` with `data/words_a1.json`, so dictionary changes from GitHub are applied automatically on deploy.
+
+Manual dictionary sync:
+
+```bash
+python -m app.scripts.sync_dictionary
+```
