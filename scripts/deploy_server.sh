@@ -45,7 +45,8 @@ if ! python3 -m venv --help >/dev/null 2>&1; then
   apt-get install -y python3 python3-venv python3-pip
 fi
 
-if [ ! -d ".venv" ]; then
+if [ ! -x ".venv/bin/python" ]; then
+  rm -rf .venv
   python3 -m venv .venv
 fi
 
