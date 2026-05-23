@@ -7,7 +7,7 @@ from aiogram.types import CallbackQuery, Message
 from app.bot.keyboards.lesson import lesson_card_keyboard, lesson_continue_keyboard, lesson_result_keyboard
 from app.bot.keyboards.main_menu import main_menu_keyboard
 from app.models import User
-from app.repositories import settings_repo, words_repo
+from app.repositories import attempts_repo, settings_repo, words_repo
 from app.services.audio_service import delete_transient_audio
 from app.services.progress_service import mark_manual_result
 
@@ -69,7 +69,8 @@ async def lesson_show(callback: CallbackQuery, session: AsyncSession) -> None:
 async def lesson_knew(callback: CallbackQuery, session: AsyncSession, db_user: User) -> None:
     await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     word_id = int(callback.data.rsplit(":", 1)[-1])
-    await mark_manual_result(session, db_user.id, word_id, knew=True)
+    was_new = await mark_manual_result(session, db_user.id, word_id, knew=True)
+    await attempts_repo.bump_daily_stats(session, db_user.id, is_correct=True, is_new=was_new)
     await callback.message.edit_text("✅ Отмечено как знакомое.", reply_markup=lesson_continue_keyboard())
     await callback.answer()
 
@@ -78,6 +79,7 @@ async def lesson_knew(callback: CallbackQuery, session: AsyncSession, db_user: U
 async def lesson_again(callback: CallbackQuery, session: AsyncSession, db_user: User) -> None:
     await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     word_id = int(callback.data.rsplit(":", 1)[-1])
-    await mark_manual_result(session, db_user.id, word_id, knew=False)
+    was_new = await mark_manual_result(session, db_user.id, word_id, knew=False)
+    await attempts_repo.bump_daily_stats(session, db_user.id, is_correct=False, is_new=was_new)
     await callback.message.edit_text("Слово вернётся на повторение позже.", reply_markup=lesson_continue_keyboard())
     await callback.answer()

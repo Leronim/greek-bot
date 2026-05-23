@@ -37,7 +37,11 @@
   </head>
   <body>
     <header>
-      <a href="/"><strong>Greek Bot Admin</strong></a>
+      <div class="toolbar" style="margin:0">
+        <a href="/"><strong>Greek Bot Admin</strong></a>
+        <a href="/">Словарь</a>
+        <a href="/stats">Статистика</a>
+      </div>
       <form class="inline" method="post" action="/logout"><button class="secondary" type="submit">Выйти</button></form>
     </header>
     <main>{% block content %}{% endblock %}</main>

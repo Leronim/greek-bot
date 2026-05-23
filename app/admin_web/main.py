@@ -10,8 +10,9 @@ from sqlalchemy.orm import selectinload
 
 from app.config import settings
 from app.database import async_session_factory, create_db_schema
-from app.models import Topic, Word, WordAnswer, WordExample
+from app.models import Topic, User, Word, WordAnswer, WordExample
 from app.repositories.words_repo import get_or_create_topic
+from app.services.stats_service import admin_daily_activity
 from app.utils.normalize import normalize_greek, normalize_russian
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -113,6 +114,26 @@ async def words_list(
             "page": page,
             "pages": max(1, (total + per_page - 1) // per_page),
             "total": total,
+        },
+    )
+
+
+@app.get("/stats", response_class=HTMLResponse)
+async def stats_page(
+    request: Request,
+    _: None = Depends(require_admin),
+    session: AsyncSession = Depends(get_session),
+) -> HTMLResponse:
+    total_users = await session.scalar(select(func.count(User.id))) or 0
+    total_words = await session.scalar(select(func.count(Word.id)).where(Word.is_active.is_(True))) or 0
+    activity = await admin_daily_activity(session, limit=30)
+    return templates.TemplateResponse(
+        "stats.html",
+        {
+            "request": request,
+            "total_users": total_users,
+            "total_words": total_words,
+            "activity": activity,
         },
     )
 

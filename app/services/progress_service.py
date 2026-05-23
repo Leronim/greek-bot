@@ -36,8 +36,8 @@ async def apply_answer_result(session: AsyncSession, user_id: int, word_id: int,
     return was_new
 
 
-async def mark_manual_result(session: AsyncSession, user_id: int, word_id: int, knew: bool) -> None:
-    await apply_answer_result(session, user_id, word_id, knew)
+async def mark_manual_result(session: AsyncSession, user_id: int, word_id: int, knew: bool) -> bool:
+    return await apply_answer_result(session, user_id, word_id, knew)
 
 
 async def mark_hard(session: AsyncSession, user_id: int, word_id: int) -> None:

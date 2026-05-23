@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Статистика{% endblock %}
+{% block content %}
+  <h1>Статистика</h1>
+
+  <div class="toolbar">
+    <div class="panel">
+      <div class="muted">Пользователей всего</div>
+      <strong style="font-size:28px">{{ total_users }}</strong>
+    </div>
+    <div class="panel">
+      <div class="muted">Активных слов</div>
+      <strong style="font-size:28px">{{ total_words }}</strong>
+    </div>
+  </div>
+
+  <h2>Активность по дням</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Дата</th>
+        <th>Уникальных пользователей</th>
+        <th>Действий</th>
+        <th>Новых слов</th>
+        <th>Повторений</th>
+        <th>Точность</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in activity %}
+        <tr>
+          <td>{{ row.date }}</td>
+          <td><strong>{{ row.active_users }}</strong></td>
+          <td>{{ row.attempts }}</td>
+          <td>{{ row.new_words }}</td>
+          <td>{{ row.reviews }}</td>
+          <td>{{ row.accuracy }}%</td>
+        </tr>
+      {% endfor %}
+      {% if not activity %}
+        <tr><td colspan="6" class="muted">Пока нет данных.</td></tr>
+      {% endif %}
+    </tbody>
+  </table>
+{% endblock %}

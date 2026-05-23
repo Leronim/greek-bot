@@ -29,13 +29,7 @@ async def add_attempt(
 
 
 async def bump_daily_stats(session: AsyncSession, user_id: int, is_correct: bool, is_new: bool = False) -> None:
-    today = date.today()
-    result = await session.execute(select(DailyStats).where(DailyStats.user_id == user_id, DailyStats.date == today))
-    stats = result.scalar_one_or_none()
-    if stats is None:
-        stats = DailyStats(user_id=user_id, date=today)
-        session.add(stats)
-        await session.flush()
+    stats = await get_or_create_daily_stats(session, user_id)
     if is_new:
         stats.new_words_count += 1
     else:
@@ -44,6 +38,21 @@ async def bump_daily_stats(session: AsyncSession, user_id: int, is_correct: bool
         stats.correct_count += 1
     else:
         stats.wrong_count += 1
+
+
+async def get_or_create_daily_stats(session: AsyncSession, user_id: int) -> DailyStats:
+    today = date.today()
+    result = await session.execute(select(DailyStats).where(DailyStats.user_id == user_id, DailyStats.date == today))
+    stats = result.scalar_one_or_none()
+    if stats is None:
+        stats = DailyStats(user_id=user_id, date=today)
+        session.add(stats)
+        await session.flush()
+    return stats
+
+
+async def touch_daily_activity(session: AsyncSession, user_id: int) -> None:
+    await get_or_create_daily_stats(session, user_id)
 
 
 async def attempts_totals(session: AsyncSession, user_id: int) -> tuple[int, int]:

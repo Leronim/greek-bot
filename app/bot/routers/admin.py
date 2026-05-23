@@ -11,6 +11,7 @@ from aiogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMar
 from app.config import settings
 from app.models import User
 from app.services.import_service import import_words_from_json
+from app.services.stats_service import build_admin_stats_text
 
 router = Router()
 _pending_broadcasts: dict[int, str] = {}
@@ -28,7 +29,8 @@ async def admin(message: Message) -> None:
     await message.answer(
         "Админка:\n"
         "/admin_import - отправь JSON-файл со словами после этой команды.\n"
-        "/admin_broadcast текст - отправить сообщение всем пользователям."
+        "/admin_broadcast текст - отправить сообщение всем пользователям.\n"
+        "/admin_stats - статистика по пользователям и дням."
     )
 
 
@@ -38,6 +40,14 @@ async def admin_import_hint(message: Message) -> None:
         await message.answer("Команда доступна только администратору.")
         return
     await message.answer("Пришли JSON-файл со словами. Формат как в data/words_a1.json.")
+
+
+@router.message(Command("admin_stats"))
+async def admin_stats(message: Message, session: AsyncSession) -> None:
+    if not message.from_user or not is_admin(message.from_user.id):
+        await message.answer("Команда доступна только администратору.")
+        return
+    await message.answer(await build_admin_stats_text(session))
 
 
 def broadcast_confirm_keyboard() -> InlineKeyboardMarkup:

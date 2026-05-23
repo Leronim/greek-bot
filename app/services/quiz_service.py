@@ -3,7 +3,7 @@ import random
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models import Word
-from app.repositories import settings_repo, words_repo
+from app.repositories import attempts_repo, settings_repo, words_repo
 from app.services.progress_service import apply_answer_result
 
 
@@ -23,4 +23,5 @@ async def create_quiz(session: AsyncSession, user_id: int) -> tuple[Word | None,
 
 
 async def apply_quiz_result(session: AsyncSession, user_id: int, word_id: int, is_correct: bool) -> None:
-    await apply_answer_result(session, user_id, word_id, is_correct)
+    was_new = await apply_answer_result(session, user_id, word_id, is_correct)
+    await attempts_repo.bump_daily_stats(session, user_id, is_correct=is_correct, is_new=was_new)
