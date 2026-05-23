@@ -16,7 +16,7 @@ def after_typing_keyboard(word_id: int | None = None) -> InlineKeyboardMarkup:
     example_callback = f"typing:example:{word_id}" if word_id is not None else "typing:example"
     audio_row = []
     if word_id is not None:
-        audio_row = [[InlineKeyboardButton(text="🔊 Озвучить", callback_data=f"audio:word:{word_id}")]]
+        audio_row = [[InlineKeyboardButton(text="🔊 Озвучить", callback_data=f"audio:typing:word:{word_id}")]]
     return InlineKeyboardMarkup(
         inline_keyboard=audio_row
         + [

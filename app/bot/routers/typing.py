@@ -9,6 +9,7 @@ from app.bot.keyboards.main_menu import main_menu_keyboard
 from app.bot.keyboards.typing import after_typing_keyboard, typing_mode_keyboard
 from app.models import User
 from app.repositories import progress_repo, words_repo
+from app.services.audio_service import delete_transient_audio
 from app.services import typing_service
 
 router = Router()
@@ -53,12 +54,14 @@ async def typing_command(message: Message) -> None:
 
 @router.callback_query(F.data == "typing:menu")
 async def typing_menu(callback: CallbackQuery) -> None:
+    await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     await callback.message.edit_text("✍️ Написать ответ\n\nВыбери режим:", reply_markup=typing_mode_keyboard())
     await callback.answer()
 
 
 @router.callback_query(F.data.startswith("typing:start:"))
 async def typing_start(callback: CallbackQuery, session: AsyncSession, db_user: User) -> None:
+    await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     mode = callback.data.rsplit(":", 1)[-1]
     direction = None if mode == "mixed" else mode
     word, resolved_direction = await typing_service.create_typing_task(
@@ -76,6 +79,7 @@ async def typing_start(callback: CallbackQuery, session: AsyncSession, db_user: 
 
 @router.callback_query(F.data == "typing:next")
 async def typing_next(callback: CallbackQuery, session: AsyncSession, db_user: User) -> None:
+    await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     word, direction = await typing_service.create_typing_task(
         session,
         db_user.id,
