@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}{% if word %}Редактировать{% else %}Новое слово{% endif %}{% endblock %}
+{% block content %}
+  <h1>{% if word %}Редактировать слово{% else %}Новое слово{% endif %}</h1>
+  {% if request.query_params.get("saved") %}<div class="status">Сохранено</div>{% endif %}
+  <form class="panel" method="post" action="{% if word %}/words/{{ word.id }}{% else %}/words{% endif %}">
+    <div class="grid">
+      <label><span>ID / slug</span><input name="slug" value="{{ word.slug if word else '' }}" required></label>
+      <label><span>Тема</span><input name="topic" value="{{ word.topic.title if word else '' }}" required></label>
+      <label><span>Греческий</span><input name="greek" value="{{ word.greek if word else '' }}" required></label>
+      <label><span>Транскрипция</span><input name="transcription" value="{{ word.transcription if word and word.transcription else '' }}"></label>
+      <label><span>Русский</span><input name="ru" value="{{ word.ru if word else '' }}" required></label>
+      <label><span>Часть речи</span><input name="part_of_speech" value="{{ word.part_of_speech if word and word.part_of_speech else '' }}"></label>
+      <label><span>Род</span><input name="gender" value="{{ word.gender if word and word.gender else '' }}"></label>
+      <label>
+        <span>Активно</span>
+        <select name="is_active">
+          <option value="true" {% if not word or word.is_active %}selected{% endif %}>Да</option>
+          <option value="" {% if word and not word.is_active %}selected{% endif %}>Нет</option>
+        </select>
+      </label>
+      <label class="full"><span>Правильные ответы на греческом, через |</span><textarea name="greek_answers">{{ answers_el }}</textarea></label>
+      <label class="full"><span>Правильные ответы на русском, через |</span><textarea name="ru_answers">{{ answers_ru }}</textarea></label>
+      <label class="full"><span>Пример на греческом</span><textarea name="example_el">{{ example.example_el if example else '' }}</textarea></label>
+      <label class="full"><span>Пример на русском</span><textarea name="example_ru">{{ example.example_ru if example else '' }}</textarea></label>
+    </div>
+    <div class="toolbar">
+      <button type="submit">Сохранить</button>
+      <a class="button secondary" href="/">К списку</a>
+    </div>
+  </form>
+  {% if word %}
+    <form method="post" action="/words/{{ word.id }}/delete" onsubmit="return confirm('Удалить слово?')">
+      <button class="danger" type="submit">Удалить</button>
+    </form>
+  {% endif %}
+{% endblock %}

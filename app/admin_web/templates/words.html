@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Словарь{% endblock %}
+{% block content %}
+  <h1>Словарь A1</h1>
+  <form class="toolbar" method="get" action="/">
+    <input style="max-width:280px" type="search" name="q" value="{{ q }}" placeholder="Поиск">
+    <select style="max-width:260px" name="topic">
+      <option value="">Все темы</option>
+      {% for item in topics %}
+        <option value="{{ item }}" {% if item == topic %}selected{% endif %}>{{ item }}</option>
+      {% endfor %}
+    </select>
+    <button type="submit">Найти</button>
+    <a class="button secondary" href="/words/new">Добавить слово</a>
+  </form>
+  <p class="muted">Найдено: {{ total }}</p>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Тема</th>
+        <th>Греческий</th>
+        <th>Русский</th>
+        <th>Ответы</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for word in words %}
+        <tr>
+          <td class="muted">{{ word.slug }}</td>
+          <td>{{ word.topic.title }}</td>
+          <td><strong>{{ word.greek }}</strong><br><span class="muted">{{ word.transcription or "" }}</span></td>
+          <td>{{ word.ru }}</td>
+          <td class="muted">{{ word.answers|length }}</td>
+          <td><a href="/words/{{ word.id }}">Редактировать</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div class="pagination">
+    {% if page > 1 %}<a class="button secondary" href="/?q={{ q }}&topic={{ topic }}&page={{ page - 1 }}">Назад</a>{% endif %}
+    <span class="muted">Страница {{ page }} / {{ pages }}</span>
+    {% if page < pages %}<a class="button secondary" href="/?q={{ q }}&topic={{ topic }}&page={{ page + 1 }}">Дальше</a>{% endif %}
+  </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+services:
+  bot:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./greek_bot.db:/app/greek_bot.db
+    restart: unless-stopped

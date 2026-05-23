@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Greek Bot Admin{% endblock %}</title>
+    <style>
+      :root { --bg:#f6f7f9; --panel:#fff; --text:#17202a; --muted:#667085; --line:#d9dee7; --accent:#166534; --danger:#b42318; }
+      * { box-sizing: border-box; }
+      body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
+      header { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px; background:var(--panel); border-bottom:1px solid var(--line); }
+      main { max-width:1180px; margin:0 auto; padding:24px; }
+      h1 { margin:0 0 18px; font-size:26px; }
+      a { color:var(--accent); text-decoration:none; }
+      a:hover { text-decoration:underline; }
+      .toolbar { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:16px; }
+      .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:16px; }
+      table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+      th,td { padding:10px 12px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+      th { color:var(--muted); font-weight:600; font-size:13px; }
+      tr:last-child td { border-bottom:0; }
+      input,select,textarea { width:100%; min-height:38px; border:1px solid var(--line); border-radius:6px; padding:8px 10px; font:inherit; background:#fff; }
+      textarea { min-height:80px; resize:vertical; }
+      label { display:block; margin:0 0 12px; font-weight:600; }
+      label span { display:block; margin-bottom:6px; color:var(--muted); font-size:13px; }
+      .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+      .full { grid-column:1 / -1; }
+      button,.button { display:inline-flex; align-items:center; justify-content:center; min-height:38px; padding:8px 14px; border:1px solid var(--accent); border-radius:6px; background:var(--accent); color:#fff; font:inherit; cursor:pointer; }
+      .button.secondary,button.secondary { background:#fff; color:var(--accent); }
+      button.danger { border-color:var(--danger); background:var(--danger); }
+      .muted { color:var(--muted); }
+      .status { padding:8px 10px; border-radius:6px; background:#e7f7ed; color:var(--accent); margin-bottom:12px; }
+      .pagination { display:flex; gap:10px; align-items:center; margin-top:16px; }
+      .inline { display:inline; }
+      @media (max-width:760px) { header,main { padding:14px; } .grid { grid-template-columns:1fr; } table { font-size:14px; } th:nth-child(1),td:nth-child(1) { display:none; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/"><strong>Greek Bot Admin</strong></a>
+      <form class="inline" method="post" action="/logout"><button class="secondary" type="submit">Выйти</button></form>
+    </header>
+    <main>{% block content %}{% endblock %}</main>
+  </body>
+</html>

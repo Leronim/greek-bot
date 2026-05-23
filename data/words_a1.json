@@ -1,0 +1,3917 @@
+[
+  {
+    "id": "ο-η-το",
+    "level": "A1",
+    "topic": "Артикли",
+    "greek": "ο, η, το",
+    "transcription": "",
+    "ru": "определённый артикль: м.р., ж.р., ср.р.",
+    "part_of_speech": "article",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο, η, το",
+      "ο η το"
+    ],
+    "ru_answers": [
+      "определенный артикль",
+      "определённый артикль"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "στο",
+    "level": "A1",
+    "topic": "Артикли",
+    "greek": "στο",
+    "transcription": "",
+    "ru": "в, на + существительное среднего рода",
+    "part_of_speech": "article_contraction",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "στο"
+    ],
+    "ru_answers": [
+      "в",
+      "на"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "στην",
+    "level": "A1",
+    "topic": "Артикли",
+    "greek": "στην",
+    "transcription": "",
+    "ru": "в, на + существительное женского рода",
+    "part_of_speech": "article_contraction",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "στην"
+    ],
+    "ru_answers": [
+      "в",
+      "на"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-αντρασ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο άντρας",
+    "transcription": "",
+    "ru": "мужчина, муж",
+    "part_of_speech": "noun",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο άντρας",
+      "ο αντρασ",
+      "άντρας",
+      "αντρασ"
+    ],
+    "ru_answers": [
+      "мужчина",
+      "муж"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-αντρασ-σου",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο άντρας σου",
+    "transcription": "",
+    "ru": "твой муж",
+    "part_of_speech": "phrase",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο άντρας σου",
+      "ο αντρασ σου"
+    ],
+    "ru_answers": [
+      "твой муж"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-κυριοσ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο κύριος",
+    "transcription": "",
+    "ru": "господин",
+    "part_of_speech": "noun",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο κύριος",
+      "ο κυριοσ",
+      "κύριος",
+      "κυριοσ"
+    ],
+    "ru_answers": [
+      "господин"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "κυριε",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "κύριε",
+    "transcription": "",
+    "ru": "господин; обращение, звательный падеж",
+    "part_of_speech": "vocative",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "κύριε",
+      "κυριε"
+    ],
+    "ru_answers": [
+      "господин"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-σκυλοσ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο σκύλος",
+    "transcription": "",
+    "ru": "пёс, собака",
+    "part_of_speech": "noun",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο σκύλος",
+      "ο σκυλοσ",
+      "σκύλος",
+      "σκυλοσ"
+    ],
+    "ru_answers": [
+      "пес",
+      "пёс",
+      "собака"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-αιγινα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η Αίγινα",
+    "transcription": "",
+    "ru": "Эгина",
+    "part_of_speech": "proper_noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η Αίγινα",
+      "η αιγινα",
+      "Αίγινα",
+      "αιγινα"
+    ],
+    "ru_answers": [
+      "Эгина"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-γατα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η γάτα",
+    "transcription": "",
+    "ru": "кошка",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η γάτα",
+      "η γατα",
+      "γάτα",
+      "γατα"
+    ],
+    "ru_answers": [
+      "кошка"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-γυναικα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η γυναίκα",
+    "transcription": "",
+    "ru": "женщина, жена",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η γυναίκα",
+      "η γυναικα",
+      "γυναίκα",
+      "γυναικα"
+    ],
+    "ru_answers": [
+      "женщина",
+      "жена"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-γυναικα-μου",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η γυναίκα μου",
+    "transcription": "",
+    "ru": "моя жена",
+    "part_of_speech": "phrase",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η γυναίκα μου",
+      "η γυναικα μου"
+    ],
+    "ru_answers": [
+      "моя жена"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-κυρια",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η κυρία",
+    "transcription": "",
+    "ru": "госпожа",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η κυρία",
+      "η κυρια",
+      "κυρία",
+      "κυρια"
+    ],
+    "ru_answers": [
+      "госпожа"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "κυρια",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "κυρία",
+    "transcription": "",
+    "ru": "госпожа; обращение, звательный падеж",
+    "part_of_speech": "vocative",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "κυρία",
+      "κυρια"
+    ],
+    "ru_answers": [
+      "госпожа"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-οικογενεια",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η οικογένεια",
+    "transcription": "",
+    "ru": "семья",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η οικογένεια",
+      "η οικογενεια",
+      "οικογένεια",
+      "οικογενεια"
+    ],
+    "ru_answers": [
+      "семья"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-λιμανι",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το λιμάνι",
+    "transcription": "",
+    "ru": "порт",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το λιμάνι",
+      "το λιμανι",
+      "λιμάνι",
+      "λιμανι"
+    ],
+    "ru_answers": [
+      "порт"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-ξενοδοχειο",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το ξενοδοχείο",
+    "transcription": "",
+    "ru": "гостиница",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το ξενοδοχείο",
+      "το ξενοδοχειο",
+      "ξενοδοχείο",
+      "ξενοδοχειο"
+    ],
+    "ru_answers": [
+      "гостиница",
+      "отель"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-παιδι",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το παιδί",
+    "transcription": "",
+    "ru": "ребёнок",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το παιδί",
+      "το παιδι",
+      "παιδί",
+      "παιδι"
+    ],
+    "ru_answers": [
+      "ребенок",
+      "ребёнок"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "τα-παιδια",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "τα παιδιά",
+    "transcription": "",
+    "ru": "дети",
+    "part_of_speech": "noun_plural",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "τα παιδιά",
+      "τα παιδια",
+      "παιδιά",
+      "παιδια"
+    ],
+    "ru_answers": [
+      "дети"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-σπιτι",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το σπίτι",
+    "transcription": "",
+    "ru": "дом",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το σπίτι",
+      "το σπιτι",
+      "σπίτι",
+      "σπιτι"
+    ],
+    "ru_answers": [
+      "дом"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-χωριο",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το χωριό",
+    "transcription": "",
+    "ru": "деревня, село",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το χωριό",
+      "το χωριο",
+      "χωριό",
+      "χωριο"
+    ],
+    "ru_answers": [
+      "деревня",
+      "село"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "αυτοσ-η-ο",
+    "level": "A1",
+    "topic": "Местоимения",
+    "greek": "αυτός-ή-ό",
+    "transcription": "",
+    "ru": "он, она, оно",
+    "part_of_speech": "pronoun",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "αυτός-ή-ό",
+      "αυτοσ-η-ο"
+    ],
+    "ru_answers": [
+      "он",
+      "она",
+      "оно"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "αυτοι-εσ-α",
+    "level": "A1",
+    "topic": "Местоимения",
+    "greek": "αυτοί-ές-ά",
+    "transcription": "",
+    "ru": "они: м.р., ж.р., ср.р.",
+    "part_of_speech": "pronoun",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "αυτοί-ές-ά",
+      "αυτοι-εσ-α"
+    ],
+    "ru_answers": [
+      "они"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "εγω",
+    "level": "A1",
+    "topic": "Местоимения",
+    "greek": "εγώ",
+    "transcription": "",
+    "ru": "я",
+    "part_of_speech": "pronoun",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "εγώ",
+      "εγω"
+    ],
+    "ru_answers": [
+      "я"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "εμεισ",
+    "level": "A1",
+    "topic": "Местоимения",
+    "greek": "εμείς",
+    "transcription": "",
+    "ru": "мы",
+    "part_of_speech": "pronoun",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "εμείς",
+      "εμεισ"
+    ],
+    "ru_answers": [
+      "мы"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "εσυ",
+    "level": "A1",
+    "topic": "Местоимения",
+    "greek": "εσύ",
+    "transcription": "",
+    "ru": "ты",
+    "part_of_speech": "pronoun",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "εσύ",
+      "εσυ"
+    ],
+    "ru_answers": [
+      "ты"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "εσεισ",
+    "level": "A1",
+    "topic": "Местоимения",
+    "greek": "εσείς",
+    "transcription": "",
+    "ru": "вы",
+    "part_of_speech": "pronoun",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "εσείς",
+      "εσεισ"
+    ],
+    "ru_answers": [
+      "вы"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "μου",
+    "level": "A1",
+    "topic": "Местоимения",
+    "greek": "μου",
+    "transcription": "",
+    "ru": "мой",
+    "part_of_speech": "possessive_pronoun",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "μου"
+    ],
+    "ru_answers": [
+      "мой",
+      "моя",
+      "мое",
+      "моё"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "σου",
+    "level": "A1",
+    "topic": "Местоимения",
+    "greek": "σου",
+    "transcription": "",
+    "ru": "твой",
+    "part_of_speech": "possessive_pronoun",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "σου"
+    ],
+    "ru_answers": [
+      "твой",
+      "твоя",
+      "твое",
+      "твоё"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "σασ",
+    "level": "A1",
+    "topic": "Местоимения",
+    "greek": "σας",
+    "transcription": "",
+    "ru": "ваш",
+    "part_of_speech": "possessive_pronoun",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "σας",
+      "σασ"
+    ],
+    "ru_answers": [
+      "ваш",
+      "ваша",
+      "ваше"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ειμαι",
+    "level": "A1",
+    "topic": "Глаголы",
+    "greek": "είμαι",
+    "transcription": "",
+    "ru": "быть; я есть",
+    "part_of_speech": "verb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "είμαι",
+      "ειμαι"
+    ],
+    "ru_answers": [
+      "быть",
+      "я есть"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "δεν",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "δεν",
+    "transcription": "",
+    "ru": "не",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "δεν"
+    ],
+    "ru_answers": [
+      "не"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "εδω",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "εδώ",
+    "transcription": "",
+    "ru": "здесь",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "εδώ",
+      "εδω"
+    ],
+    "ru_answers": [
+      "здесь",
+      "тут"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ναι",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "ναι",
+    "transcription": "",
+    "ru": "да",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ναι"
+    ],
+    "ru_answers": [
+      "да"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "οχι",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "όχι",
+    "transcription": "",
+    "ru": "нет",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "όχι",
+      "οχι"
+    ],
+    "ru_answers": [
+      "нет"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "απο",
+    "level": "A1",
+    "topic": "Предлоги",
+    "greek": "από",
+    "transcription": "",
+    "ru": "из",
+    "part_of_speech": "preposition",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "από",
+      "απο"
+    ],
+    "ru_answers": [
+      "из",
+      "от"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "αντιο",
+    "level": "A1",
+    "topic": "Выражения",
+    "greek": "αντίο!",
+    "transcription": "",
+    "ru": "прощай",
+    "part_of_speech": "phrase",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "αντίο",
+      "αντιο",
+      "αντίο!"
+    ],
+    "ru_answers": [
+      "прощай",
+      "до свидания"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "αντιο-σασ",
+    "level": "A1",
+    "topic": "Выражения",
+    "greek": "αντίο σας!",
+    "transcription": "",
+    "ru": "прощайте",
+    "part_of_speech": "phrase",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "αντίο σας",
+      "αντιο σασ",
+      "αντίο σας!"
+    ],
+    "ru_answers": [
+      "прощайте",
+      "до свидания"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "γεια-γεια-σου",
+    "level": "A1",
+    "topic": "Выражения",
+    "greek": "γεια! / γεια σου!",
+    "transcription": "",
+    "ru": "привет; здравствуй",
+    "part_of_speech": "phrase",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "γεια",
+      "γεια σου"
+    ],
+    "ru_answers": [
+      "привет",
+      "здравствуй"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "γεια-σασ",
+    "level": "A1",
+    "topic": "Выражения",
+    "greek": "γεια σας!",
+    "transcription": "",
+    "ru": "здравствуйте",
+    "part_of_speech": "phrase",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "γεια σας",
+      "γεια σασ",
+      "γεια σας!"
+    ],
+    "ru_answers": [
+      "здравствуйте"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "καλωσ-ηρθεσ-ηλθεσ",
+    "level": "A1",
+    "topic": "Выражения",
+    "greek": "καλώς ήρθες! / ήλθες!",
+    "transcription": "",
+    "ru": "добро пожаловать",
+    "part_of_speech": "phrase",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "καλώς ήρθες",
+      "καλωσ ηρθεσ",
+      "καλώς ήλθες",
+      "καλωσ ηλθεσ",
+      "ήρθες",
+      "ηρθεσ",
+      "ήλθες",
+      "ηλθεσ"
+    ],
+    "ru_answers": [
+      "добро пожаловать"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "χαιρετε",
+    "level": "A1",
+    "topic": "Выражения",
+    "greek": "χαίρετε!",
+    "transcription": "",
+    "ru": "приветствую вас; рад встрече",
+    "part_of_speech": "phrase",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "χαίρετε",
+      "χαιρετε",
+      "χαίρετε!"
+    ],
+    "ru_answers": [
+      "приветствую вас",
+      "рад встрече"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-μαθητησ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο μαθητής",
+    "transcription": "",
+    "ru": "ученик",
+    "part_of_speech": "noun",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο μαθητής",
+      "ο μαθητησ",
+      "μαθητής",
+      "μαθητησ"
+    ],
+    "ru_answers": [
+      "ученик"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-φιλοσ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο φίλος",
+    "transcription": "",
+    "ru": "друг",
+    "part_of_speech": "noun",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο φίλος",
+      "ο φιλοσ",
+      "φίλος",
+      "φιλοσ"
+    ],
+    "ru_answers": [
+      "друг"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-η-γραμματεασ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο/η γραμματέας",
+    "transcription": "",
+    "ru": "секретарь, секретарша",
+    "part_of_speech": "noun",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο γραμματέας",
+      "ο γραμματεασ",
+      "η γραμματέας",
+      "η γραμματεασ",
+      "γραμματέας",
+      "γραμματεασ"
+    ],
+    "ru_answers": [
+      "секретарь",
+      "секретарша"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-η-κατοικοσ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο/η κάτοικος",
+    "transcription": "",
+    "ru": "житель, жительница",
+    "part_of_speech": "noun",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο κάτοικος",
+      "ο κατοικοσ",
+      "η κάτοικος",
+      "η κατοικοσ",
+      "κάτοικος",
+      "κατοικοσ"
+    ],
+    "ru_answers": [
+      "житель",
+      "жительница"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-γραμματεια",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η γραμματεία",
+    "transcription": "",
+    "ru": "приёмная, секретариат",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η γραμματεία",
+      "η γραμματεια",
+      "γραμματεία",
+      "γραμματεια"
+    ],
+    "ru_answers": [
+      "приемная",
+      "приёмная",
+      "секретариат"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-εθνικοτητα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η εθνικότητα",
+    "transcription": "",
+    "ru": "национальность",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η εθνικότητα",
+      "η εθνικοτητα",
+      "εθνικότητα",
+      "εθνικοτητα"
+    ],
+    "ru_answers": [
+      "национальность"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-μερα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η μέρα",
+    "transcription": "",
+    "ru": "день",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η μέρα",
+      "η μερα",
+      "η ημέρα",
+      "η ημερα",
+      "μέρα",
+      "μερα",
+      "ημέρα",
+      "ημερα"
+    ],
+    "ru_answers": [
+      "день"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-μαθητρια",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η μαθήτρια",
+    "transcription": "",
+    "ru": "ученица",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η μαθήτρια",
+      "η μαθητρια",
+      "μαθήτρια",
+      "μαθητρια"
+    ],
+    "ru_answers": [
+      "ученица"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-νυχτα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η νύχτα",
+    "transcription": "",
+    "ru": "ночь",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η νύχτα",
+      "η νυχτα",
+      "νύχτα",
+      "νυχτα"
+    ],
+    "ru_answers": [
+      "ночь"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-φιλη",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η φίλη",
+    "transcription": "",
+    "ru": "подруга",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η φίλη",
+      "η φιλη",
+      "φίλη",
+      "φιλη"
+    ],
+    "ru_answers": [
+      "подруга"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-χωρα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η χώρα",
+    "transcription": "",
+    "ru": "страна",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η χώρα",
+      "η χωρα",
+      "χώρα",
+      "χωρα"
+    ],
+    "ru_answers": [
+      "страна"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-αγορι",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το αγόρι",
+    "transcription": "",
+    "ru": "мальчик",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το αγόρι",
+      "το αγορι",
+      "αγόρι",
+      "αγορι"
+    ],
+    "ru_answers": [
+      "мальчик"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-απογευμα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το απόγευμα",
+    "transcription": "",
+    "ru": "послеобеденное время",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το απόγευμα",
+      "το απογευμα",
+      "απόγευμα",
+      "απογευμα"
+    ],
+    "ru_answers": [
+      "послеобеденное время"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-βραδυ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το βράδυ",
+    "transcription": "",
+    "ru": "вечер",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το βράδυ",
+      "το βραδυ",
+      "βράδυ",
+      "βραδυ"
+    ],
+    "ru_answers": [
+      "вечер"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-επωνυμο",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το επώνυμο",
+    "transcription": "",
+    "ru": "фамилия",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το επώνυμο",
+      "το επωνυμο",
+      "επώνυμο",
+      "επωνυμο"
+    ],
+    "ru_answers": [
+      "фамилия"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-κοριτσι",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το κορίτσι",
+    "transcription": "",
+    "ru": "девочка",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το κορίτσι",
+      "το κοριτσι",
+      "κορίτσι",
+      "κοριτσι"
+    ],
+    "ru_answers": [
+      "девочка"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-μουσειο",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το μουσείο",
+    "transcription": "",
+    "ru": "музей",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το μουσείο",
+      "το μουσειο",
+      "μουσείο",
+      "μουσειο"
+    ],
+    "ru_answers": [
+      "музей"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-ονομα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το όνομα",
+    "transcription": "",
+    "ru": "имя",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το όνομα",
+      "το ονομα",
+      "όνομα",
+      "ονομα"
+    ],
+    "ru_answers": [
+      "имя"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-πορτρετο",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το πορτρέτο",
+    "transcription": "",
+    "ru": "портрет",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το πορτρέτο",
+      "το πορτρετο",
+      "πορτρέτο",
+      "πορτρετο"
+    ],
+    "ru_answers": [
+      "портрет"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-προγραμμα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το πρόγραμμα",
+    "transcription": "",
+    "ru": "программа",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το πρόγραμμα",
+      "το προγραμμα",
+      "πρόγραμμα",
+      "προγραμμα"
+    ],
+    "ru_answers": [
+      "программа"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-πρωι",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το πρωί",
+    "transcription": "",
+    "ru": "утро, утром",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το πρωί",
+      "το πρωι",
+      "πρωί",
+      "πρωι"
+    ],
+    "ru_answers": [
+      "утро",
+      "утром"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-σχολειο",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το σχολείο",
+    "transcription": "",
+    "ru": "школа",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το σχολείο",
+      "το σχολειο",
+      "σχολείο",
+      "σχολειο"
+    ],
+    "ru_answers": [
+      "школа"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "αυτοσ-αυτη-αυτο",
+    "level": "A1",
+    "topic": "Местоимения",
+    "greek": "αυτός, αυτή, αυτό",
+    "transcription": "",
+    "ru": "он, она, оно",
+    "part_of_speech": "pronoun",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "αυτός, αυτή, αυτό",
+      "αυτοσ αυτη αυτο"
+    ],
+    "ru_answers": [
+      "он",
+      "она",
+      "оно"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ποιοσ-ποια-ποιο",
+    "level": "A1",
+    "topic": "Местоимения",
+    "greek": "ποιος; ποια; ποιο;",
+    "transcription": "",
+    "ru": "кто? м.р., ж.р., ср.р.",
+    "part_of_speech": "question_pronoun",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ποιος",
+      "ποιοσ",
+      "ποια",
+      "ποιο"
+    ],
+    "ru_answers": [
+      "кто"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "του",
+    "level": "A1",
+    "topic": "Местоимения",
+    "greek": "του",
+    "transcription": "",
+    "ru": "его; притяжательное местоимение м.р. и ср.р.",
+    "part_of_speech": "possessive_pronoun",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "του"
+    ],
+    "ru_answers": [
+      "его"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "τησ",
+    "level": "A1",
+    "topic": "Местоимения",
+    "greek": "της",
+    "transcription": "",
+    "ru": "её; притяжательное местоимение ж.р.",
+    "part_of_speech": "possessive_pronoun",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "της",
+      "τησ"
+    ],
+    "ru_answers": [
+      "ее",
+      "её"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "φευγω",
+    "level": "A1",
+    "topic": "Глаголы",
+    "greek": "φεύγω",
+    "transcription": "",
+    "ru": "ухожу",
+    "part_of_speech": "verb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "φεύγω",
+      "φευγω"
+    ],
+    "ru_answers": [
+      "ухожу",
+      "уходить"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "αυριο",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "αύριο",
+    "transcription": "",
+    "ru": "завтра",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "αύριο",
+      "αυριο"
+    ],
+    "ru_answers": [
+      "завтра"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "μαλιστα",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "μάλιστα",
+    "transcription": "",
+    "ru": "конечно",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "μάλιστα",
+      "μαλιστα"
+    ],
+    "ru_answers": [
+      "конечно"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "παλι",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "πάλι",
+    "transcription": "",
+    "ru": "снова",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "πάλι",
+      "παλι"
+    ],
+    "ru_answers": [
+      "снова",
+      "опять"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "πολυ",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "πολύ",
+    "transcription": "",
+    "ru": "очень",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "πολύ",
+      "πολυ"
+    ],
+    "ru_answers": [
+      "очень"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "φετοσ",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "φέτος",
+    "transcription": "",
+    "ru": "в этом году",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "φέτος",
+      "φετοσ"
+    ],
+    "ru_answers": [
+      "в этом году"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ωραια",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "ωραία",
+    "transcription": "",
+    "ru": "прекрасно",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ωραία",
+      "ωραια"
+    ],
+    "ru_answers": [
+      "прекрасно",
+      "хорошо"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η",
+    "level": "A1",
+    "topic": "Союзы",
+    "greek": "ή",
+    "transcription": "",
+    "ru": "или",
+    "part_of_speech": "conjunction",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ή",
+      "η"
+    ],
+    "ru_answers": [
+      "или"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "και-κι",
+    "level": "A1",
+    "topic": "Союзы",
+    "greek": "και (κι)",
+    "transcription": "",
+    "ru": "и",
+    "part_of_speech": "conjunction",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "και",
+      "κι"
+    ],
+    "ru_answers": [
+      "и"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "λοιπον",
+    "level": "A1",
+    "topic": "Союзы",
+    "greek": "λοιπόν",
+    "transcription": "",
+    "ru": "итак",
+    "part_of_speech": "conjunction",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "λοιπόν",
+      "λοιπον"
+    ],
+    "ru_answers": [
+      "итак"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "α",
+    "level": "A1",
+    "topic": "Междометия",
+    "greek": "α!",
+    "transcription": "",
+    "ru": "а!",
+    "part_of_speech": "interjection",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "α",
+      "α!"
+    ],
+    "ru_answers": [
+      "а"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "καλημερα",
+    "level": "A1",
+    "topic": "Выражения",
+    "greek": "καλημέρα!",
+    "transcription": "",
+    "ru": "доброе утро",
+    "part_of_speech": "phrase",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "καλημέρα",
+      "καλημερα",
+      "καλημέρα!"
+    ],
+    "ru_answers": [
+      "доброе утро"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "καληνυχτα",
+    "level": "A1",
+    "topic": "Выражения",
+    "greek": "καληνύχτα!",
+    "transcription": "",
+    "ru": "спокойной ночи",
+    "part_of_speech": "phrase",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "καληνύχτα",
+      "καληνυχτα",
+      "καληνύχτα!"
+    ],
+    "ru_answers": [
+      "спокойной ночи"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "καλησπερα",
+    "level": "A1",
+    "topic": "Выражения",
+    "greek": "καλησπέρα!",
+    "transcription": "",
+    "ru": "добрый вечер",
+    "part_of_speech": "phrase",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "καλησπέρα",
+      "καλησπερα",
+      "καλησπέρα!"
+    ],
+    "ru_answers": [
+      "добрый вечер"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "οριστε",
+    "level": "A1",
+    "topic": "Выражения",
+    "greek": "ορίστε",
+    "transcription": "",
+    "ru": "пожалуйста",
+    "part_of_speech": "phrase",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ορίστε",
+      "οριστε"
+    ],
+    "ru_answers": [
+      "пожалуйста"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ενασ-μια-μια-ενα",
+    "level": "A1",
+    "topic": "Артикли",
+    "greek": "ένας-μια/μία-ένα",
+    "transcription": "",
+    "ru": "один, одна, одно; неопределённый артикль м.р., ж.р., ср.р.",
+    "part_of_speech": "article",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ένας",
+      "ενασ",
+      "μια",
+      "μία",
+      "ένα",
+      "ενα"
+    ],
+    "ru_answers": [
+      "один",
+      "одна",
+      "одно",
+      "неопределенный артикль",
+      "неопределённый артикль"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-αερασ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο αέρας",
+    "transcription": "",
+    "ru": "ветер",
+    "part_of_speech": "noun",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο αέρας",
+      "ο αερασ",
+      "αέρας",
+      "αερασ"
+    ],
+    "ru_answers": [
+      "ветер"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-βορρασ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο Βορράς",
+    "transcription": "",
+    "ru": "север",
+    "part_of_speech": "noun",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο Βορράς",
+      "ο βορρασ",
+      "Βορράς",
+      "βορρασ"
+    ],
+    "ru_answers": [
+      "север"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-ηλιοσ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο ήλιος",
+    "transcription": "",
+    "ru": "солнце",
+    "part_of_speech": "noun",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο ήλιος",
+      "ο ηλιοσ",
+      "ήλιος",
+      "ηλιοσ"
+    ],
+    "ru_answers": [
+      "солнце"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-νεστοσ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο Νέστος",
+    "transcription": "",
+    "ru": "Нестос, река",
+    "part_of_speech": "proper_noun",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο Νέστος",
+      "ο νεστοσ",
+      "Νέστος",
+      "νεστοσ"
+    ],
+    "ru_answers": [
+      "Нестос",
+      "река Нестос"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-νοτοσ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο Νότος",
+    "transcription": "",
+    "ru": "юг",
+    "part_of_speech": "noun",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο Νότος",
+      "ο νοτοσ",
+      "Νότος",
+      "νοτοσ"
+    ],
+    "ru_answers": [
+      "юг"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-ολυμποσ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο Όλυμπος",
+    "transcription": "",
+    "ru": "Олимп, гора",
+    "part_of_speech": "proper_noun",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο Όλυμπος",
+      "ο ολυμποσ",
+      "Όλυμπος",
+      "ολυμποσ"
+    ],
+    "ru_answers": [
+      "Олимп",
+      "гора Олимп"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-ουρανοσ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο ουρανός",
+    "transcription": "",
+    "ru": "небо",
+    "part_of_speech": "noun",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο ουρανός",
+      "ο ουρανοσ",
+      "ουρανός",
+      "ουρανοσ"
+    ],
+    "ru_answers": [
+      "небо"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-πειραιασ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο Πειραιάς",
+    "transcription": "",
+    "ru": "Пирей, порт",
+    "part_of_speech": "proper_noun",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο Πειραιάς",
+      "ο πειραιασ",
+      "Πειραιάς",
+      "πειραιασ"
+    ],
+    "ru_answers": [
+      "Пирей",
+      "порт Пирей"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-ποταμοσ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο ποταμός",
+    "transcription": "",
+    "ru": "река",
+    "part_of_speech": "noun",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο ποταμός",
+      "ο ποταμοσ",
+      "ποταμός",
+      "ποταμοσ"
+    ],
+    "ru_answers": [
+      "река"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-χαρτησ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο χάρτης",
+    "transcription": "",
+    "ru": "карта",
+    "part_of_speech": "noun",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο χάρτης",
+      "ο χαρτησ",
+      "χάρτης",
+      "χαρτησ"
+    ],
+    "ru_answers": [
+      "карта"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-αθηνα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η Αθήνα",
+    "transcription": "",
+    "ru": "Афины, столица Греции",
+    "part_of_speech": "proper_noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η Αθήνα",
+      "η αθηνα",
+      "Αθήνα",
+      "αθηνα"
+    ],
+    "ru_answers": [
+      "Афины"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-ανατολη",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η Ανατολή",
+    "transcription": "",
+    "ru": "восток",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η Ανατολή",
+      "η ανατολη",
+      "Ανατολή",
+      "ανατολη"
+    ],
+    "ru_answers": [
+      "восток"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-βαλιτσα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η βαλίτσα",
+    "transcription": "",
+    "ru": "чемодан",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η βαλίτσα",
+      "η βαλιτσα",
+      "βαλίτσα",
+      "βαλιτσα"
+    ],
+    "ru_answers": [
+      "чемодан"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-γεωγραφια",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η γεωγραφία",
+    "transcription": "",
+    "ru": "география",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η γεωγραφία",
+      "η γεωγραφια",
+      "γεωγραφία",
+      "γεωγραφια"
+    ],
+    "ru_answers": [
+      "география"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-γη",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η Γη",
+    "transcription": "",
+    "ru": "Земля",
+    "part_of_speech": "proper_noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η Γη",
+      "η γη",
+      "Γη",
+      "γη"
+    ],
+    "ru_answers": [
+      "Земля"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-δαδια",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η Δαδιά",
+    "transcription": "",
+    "ru": "Дадья, лес",
+    "part_of_speech": "proper_noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η Δαδιά",
+      "η δαδια",
+      "Δαδιά",
+      "δαδια"
+    ],
+    "ru_answers": [
+      "Дадья",
+      "лес Дадья"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-δυση",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η Δύση",
+    "transcription": "",
+    "ru": "запад",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η Δύση",
+      "η δυση",
+      "Δύση",
+      "δυση"
+    ],
+    "ru_answers": [
+      "запад"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-ελλαδα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η Ελλάδα",
+    "transcription": "",
+    "ru": "Греция",
+    "part_of_speech": "proper_noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η Ελλάδα",
+      "η ελλαδα",
+      "Ελλάδα",
+      "ελλαδα"
+    ],
+    "ru_answers": [
+      "Греция"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-ευρωπη",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η Ευρώπη",
+    "transcription": "",
+    "ru": "Европа",
+    "part_of_speech": "proper_noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η Ευρώπη",
+      "η ευρωπη",
+      "Ευρώπη",
+      "ευρωπη"
+    ],
+    "ru_answers": [
+      "Европа"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-ηπειροσ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η ήπειρος",
+    "transcription": "",
+    "ru": "материк, континент",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η ήπειρος",
+      "η ηπειροσ",
+      "ήπειρος",
+      "ηπειροσ"
+    ],
+    "ru_answers": [
+      "материк",
+      "континент"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-θαλασσα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η θάλασσα",
+    "transcription": "",
+    "ru": "море",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η θάλασσα",
+      "η θαλασσα",
+      "θάλασσα",
+      "θαλασσα"
+    ],
+    "ru_answers": [
+      "море"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-κερκινη",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η Κερκίνη",
+    "transcription": "",
+    "ru": "Керкини, озеро",
+    "part_of_speech": "proper_noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η Κερκίνη",
+      "η κερκινη",
+      "Κερκίνη",
+      "κερκινη"
+    ],
+    "ru_answers": [
+      "Керкини",
+      "озеро Керкини"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-λιμνη",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η λίμνη",
+    "transcription": "",
+    "ru": "озеро",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η λίμνη",
+      "η λιμνη",
+      "λίμνη",
+      "λιμνη"
+    ],
+    "ru_answers": [
+      "озеро"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-μεσογειοσ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η Μεσόγειος",
+    "transcription": "",
+    "ru": "Средиземное море",
+    "part_of_speech": "proper_noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η Μεσόγειος",
+      "η μεσογειοσ",
+      "Μεσόγειος",
+      "μεσογειοσ"
+    ],
+    "ru_answers": [
+      "Средиземное море"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-πορταρια",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η Πορταριά",
+    "transcription": "",
+    "ru": "Портарья, деревня",
+    "part_of_speech": "proper_noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η Πορταριά",
+      "η πορταρια",
+      "Πορταριά",
+      "πορταρια"
+    ],
+    "ru_answers": [
+      "Портарья",
+      "деревня Портарья"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-πολη",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η πόλη",
+    "transcription": "",
+    "ru": "город",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η πόλη",
+      "η πολη",
+      "πόλη",
+      "πολη"
+    ],
+    "ru_answers": [
+      "город"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-πυξιδα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η πυξίδα",
+    "transcription": "",
+    "ru": "компас",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η πυξίδα",
+      "η πυξιδα",
+      "πυξίδα",
+      "πυξιδα"
+    ],
+    "ru_answers": [
+      "компас"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-αστερι",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το αστέρι",
+    "transcription": "",
+    "ru": "звезда",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το αστέρι",
+      "το αστερι",
+      "αστέρι",
+      "αστερι"
+    ],
+    "ru_answers": [
+      "звезда"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-βουνο",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το βουνό",
+    "transcription": "",
+    "ru": "гора",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το βουνό",
+      "το βουνο",
+      "βουνό",
+      "βουνο"
+    ],
+    "ru_answers": [
+      "гора"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-δασοσ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το δάσος",
+    "transcription": "",
+    "ru": "лес",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το δάσος",
+      "το δασοσ",
+      "δάσος",
+      "δασοσ"
+    ],
+    "ru_answers": [
+      "лес"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-διαβατηριο",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το διαβατήριο",
+    "transcription": "",
+    "ru": "паспорт",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το διαβατήριο",
+      "το διαβατηριο",
+      "διαβατήριο",
+      "διαβατηριο"
+    ],
+    "ru_answers": [
+      "паспорт"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-εισιτηριο",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το εισιτήριο",
+    "transcription": "",
+    "ru": "билет",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το εισιτήριο",
+      "το εισιτηριο",
+      "εισιτήριο",
+      "εισιτηριο"
+    ],
+    "ru_answers": [
+      "билет"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-νησι",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το νησί",
+    "transcription": "",
+    "ru": "остров",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το νησί",
+      "το νησι",
+      "νησί",
+      "νησι"
+    ],
+    "ru_answers": [
+      "остров"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-συννεφο",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το σύννεφο",
+    "transcription": "",
+    "ru": "облако",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το σύννεφο",
+      "το συννεφο",
+      "σύννεφο",
+      "συννεφο"
+    ],
+    "ru_answers": [
+      "облако"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-φεγγαρι",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το φεγγάρι",
+    "transcription": "",
+    "ru": "луна",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το φεγγάρι",
+      "το φεγγαρι",
+      "φεγγάρι",
+      "φεγγαρι"
+    ],
+    "ru_answers": [
+      "луна"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "λιγοσ-η-ο",
+    "level": "A1",
+    "topic": "Прилагательные",
+    "greek": "λίγος-η-ο",
+    "transcription": "",
+    "ru": "малый, маленький; недостаточный",
+    "part_of_speech": "adjective",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "λίγος",
+      "λιγοσ",
+      "λίγη",
+      "λιγη",
+      "λίγο",
+      "λιγο"
+    ],
+    "ru_answers": [
+      "малый",
+      "маленький",
+      "недостаточный"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "τι",
+    "level": "A1",
+    "topic": "Местоимения",
+    "greek": "τι...;",
+    "transcription": "",
+    "ru": "что...?",
+    "part_of_speech": "question_pronoun",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "τι",
+      "τι;"
+    ],
+    "ru_answers": [
+      "что"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-δασκαλοσ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο δάσκαλος",
+    "transcription": "",
+    "ru": "учитель",
+    "part_of_speech": "noun",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο δάσκαλος",
+      "ο δασκαλοσ",
+      "δάσκαλος",
+      "δασκαλοσ"
+    ],
+    "ru_answers": [
+      "учитель"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-υπολογιστησ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο υπολογιστής",
+    "transcription": "",
+    "ru": "компьютер",
+    "part_of_speech": "noun",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο υπολογιστής",
+      "ο υπολογιστησ",
+      "υπολογιστής",
+      "υπολογιστησ"
+    ],
+    "ru_answers": [
+      "компьютер"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ο-φορτιστησ",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "ο φορτιστής",
+    "transcription": "",
+    "ru": "зарядное устройство",
+    "part_of_speech": "noun",
+    "gender": "masculine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ο φορτιστής",
+      "ο φορτιστησ",
+      "φορτιστής",
+      "φορτιστησ"
+    ],
+    "ru_answers": [
+      "зарядное устройство",
+      "зарядка"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-δασκαλα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η δασκάλα",
+    "transcription": "",
+    "ru": "учительница",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η δασκάλα",
+      "η δασκαλα",
+      "δασκάλα",
+      "δασκαλα"
+    ],
+    "ru_answers": [
+      "учительница"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-δουλεια",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η δουλειά",
+    "transcription": "",
+    "ru": "работа",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η δουλειά",
+      "η δουλεια",
+      "δουλειά",
+      "δουλεια"
+    ],
+    "ru_answers": [
+      "работа"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-εβδομαδα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η εβδομάδα",
+    "transcription": "",
+    "ru": "неделя",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η εβδομάδα",
+      "η εβδομαδα",
+      "εβδομάδα",
+      "εβδομαδα"
+    ],
+    "ru_answers": [
+      "неделя"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-εκπομπη",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η εκπομπή",
+    "transcription": "",
+    "ru": "телепередача",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η εκπομπή",
+      "η εκπομπη",
+      "εκπομπή",
+      "εκπομπη"
+    ],
+    "ru_answers": [
+      "телепередача",
+      "передача"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-εφημεριδα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η εφημερίδα",
+    "transcription": "",
+    "ru": "газета",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η εφημερίδα",
+      "η εφημεριδα",
+      "εφημερίδα",
+      "εφημεριδα"
+    ],
+    "ru_answers": [
+      "газета"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-μπαταρια",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η μπαταρία",
+    "transcription": "",
+    "ru": "батарейка",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η μπαταρία",
+      "η μπαταρια",
+      "μπαταρία",
+      "μπαταρια"
+    ],
+    "ru_answers": [
+      "батарейка",
+      "батарея"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-οθονη",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η οθόνη",
+    "transcription": "",
+    "ru": "экран",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η οθόνη",
+      "η οθονη",
+      "οθόνη",
+      "οθονη"
+    ],
+    "ru_answers": [
+      "экран"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-ταξη",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η τάξη",
+    "transcription": "",
+    "ru": "класс",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η τάξη",
+      "η ταξη",
+      "τάξη",
+      "ταξη"
+    ],
+    "ru_answers": [
+      "класс"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "στην-ταξη",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "στην τάξη",
+    "transcription": "",
+    "ru": "в классе",
+    "part_of_speech": "phrase",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "στην τάξη",
+      "στην ταξη"
+    ],
+    "ru_answers": [
+      "в классе"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "η-χαρα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "η χαρά",
+    "transcription": "",
+    "ru": "радость",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "η χαρά",
+      "η χαρα",
+      "χαρά",
+      "χαρα"
+    ],
+    "ru_answers": [
+      "радость"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-βιβλιο",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το βιβλίο",
+    "transcription": "",
+    "ru": "книга",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το βιβλίο",
+      "το βιβλιο",
+      "βιβλίο",
+      "βιβλιο"
+    ],
+    "ru_answers": [
+      "книга"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-λεωφορειο",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το λεωφορείο",
+    "transcription": "",
+    "ru": "автобус",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το λεωφορείο",
+      "το λεωφορειο",
+      "λεωφορείο",
+      "λεωφορειο"
+    ],
+    "ru_answers": [
+      "автобус"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-μαθημα",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το μάθημα",
+    "transcription": "",
+    "ru": "урок",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το μάθημα",
+      "το μαθημα",
+      "μάθημα",
+      "μαθημα"
+    ],
+    "ru_answers": [
+      "урок"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-πληκτρολογιο",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το πληκτρολόγιο",
+    "transcription": "",
+    "ru": "клавиатура",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το πληκτρολόγιο",
+      "το πληκτρολογιο",
+      "πληκτρολόγιο",
+      "πληκτρολογιο"
+    ],
+    "ru_answers": [
+      "клавиатура"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-πλοιο",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το πλοίο",
+    "transcription": "",
+    "ru": "корабль",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το πλοίο",
+      "το πλοιο",
+      "πλοίο",
+      "πλοιο"
+    ],
+    "ru_answers": [
+      "корабль",
+      "судно"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-ποντικι",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το ποντίκι",
+    "transcription": "",
+    "ru": "компьютерная мышь",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το ποντίκι",
+      "το ποντικι",
+      "ποντίκι",
+      "ποντικι"
+    ],
+    "ru_answers": [
+      "компьютерная мышь",
+      "мышь"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-τσαι",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το τσάι",
+    "transcription": "",
+    "ru": "чай",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το τσάι",
+      "το τσαι",
+      "τσάι",
+      "τσαι"
+    ],
+    "ru_answers": [
+      "чай"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "το-φαγητο",
+    "level": "A1",
+    "topic": "Имена существительные",
+    "greek": "το φαγητό",
+    "transcription": "",
+    "ru": "еда",
+    "part_of_speech": "noun",
+    "gender": "neuter",
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "το φαγητό",
+      "το φαγητο",
+      "φαγητό",
+      "φαγητο"
+    ],
+    "ru_answers": [
+      "еда"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "εμενα",
+    "level": "A1",
+    "topic": "Местоимения",
+    "greek": "εμένα",
+    "transcription": "",
+    "ru": "меня",
+    "part_of_speech": "pronoun",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "εμένα",
+      "εμενα"
+    ],
+    "ru_answers": [
+      "меня"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "εσενα",
+    "level": "A1",
+    "topic": "Местоимения",
+    "greek": "εσένα",
+    "transcription": "",
+    "ru": "тебя",
+    "part_of_speech": "pronoun",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "εσένα",
+      "εσενα"
+    ],
+    "ru_answers": [
+      "тебя"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "βγαινω",
+    "level": "A1",
+    "topic": "Глаголы",
+    "greek": "βγαίνω",
+    "transcription": "",
+    "ru": "выхожу",
+    "part_of_speech": "verb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "βγαίνω",
+      "βγαινω"
+    ],
+    "ru_answers": [
+      "выхожу",
+      "выходить"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "βλεπω",
+    "level": "A1",
+    "topic": "Глаголы",
+    "greek": "βλέπω",
+    "transcription": "",
+    "ru": "вижу",
+    "part_of_speech": "verb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "βλέπω",
+      "βλεπω"
+    ],
+    "ru_answers": [
+      "вижу",
+      "видеть"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "διαβαζω",
+    "level": "A1",
+    "topic": "Глаголы",
+    "greek": "διαβάζω",
+    "transcription": "",
+    "ru": "читаю",
+    "part_of_speech": "verb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "διαβάζω",
+      "διαβαζω"
+    ],
+    "ru_answers": [
+      "читаю",
+      "читать"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ετοιμαζω",
+    "level": "A1",
+    "topic": "Глаголы",
+    "greek": "ετοιμάζω",
+    "transcription": "",
+    "ru": "готовлю",
+    "part_of_speech": "verb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ετοιμάζω",
+      "ετοιμαζω"
+    ],
+    "ru_answers": [
+      "готовлю",
+      "готовить"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ευχαριστω",
+    "level": "A1",
+    "topic": "Глаголы",
+    "greek": "ευχαριστώ",
+    "transcription": "",
+    "ru": "благодарю",
+    "part_of_speech": "verb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ευχαριστώ",
+      "ευχαριστω"
+    ],
+    "ru_answers": [
+      "благодарю",
+      "спасибо"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ηταν",
+    "level": "A1",
+    "topic": "Глаголы",
+    "greek": "ήταν",
+    "transcription": "",
+    "ru": "был, была, было, были",
+    "part_of_speech": "verb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ήταν",
+      "ηταν"
+    ],
+    "ru_answers": [
+      "был",
+      "была",
+      "было",
+      "были"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "θα-ειναι",
+    "level": "A1",
+    "topic": "Глаголы",
+    "greek": "θα είναι",
+    "transcription": "",
+    "ru": "будет, будут",
+    "part_of_speech": "verb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "θα είναι",
+      "θα ειναι"
+    ],
+    "ru_answers": [
+      "будет",
+      "будут"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "κανω",
+    "level": "A1",
+    "topic": "Глаголы",
+    "greek": "κάνω",
+    "transcription": "",
+    "ru": "делаю",
+    "part_of_speech": "verb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "κάνω",
+      "κανω"
+    ],
+    "ru_answers": [
+      "делаю",
+      "делать"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "καταλαβαινω",
+    "level": "A1",
+    "topic": "Глаголы",
+    "greek": "καταλαβαίνω",
+    "transcription": "",
+    "ru": "понимаю",
+    "part_of_speech": "verb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "καταλαβαίνω",
+      "καταλαβαινω"
+    ],
+    "ru_answers": [
+      "понимаю",
+      "понимать"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "λεγομαι",
+    "level": "A1",
+    "topic": "Глаголы",
+    "greek": "λέγομαι",
+    "transcription": "",
+    "ru": "называюсь",
+    "part_of_speech": "verb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "λέγομαι",
+      "λεγομαι"
+    ],
+    "ru_answers": [
+      "называюсь",
+      "называться"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "παιρνω",
+    "level": "A1",
+    "topic": "Глаголы",
+    "greek": "παίρνω",
+    "transcription": "",
+    "ru": "беру",
+    "part_of_speech": "verb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "παίρνω",
+      "παιρνω"
+    ],
+    "ru_answers": [
+      "беру",
+      "брать"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "παρακαλω",
+    "level": "A1",
+    "topic": "Глаголы",
+    "greek": "παρακαλώ",
+    "transcription": "",
+    "ru": "прошу; пожалуйста",
+    "part_of_speech": "verb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "παρακαλώ",
+      "παρακαλω"
+    ],
+    "ru_answers": [
+      "прошу",
+      "пожалуйста"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "περιμενω",
+    "level": "A1",
+    "topic": "Глаголы",
+    "greek": "περιμένω",
+    "transcription": "",
+    "ru": "жду",
+    "part_of_speech": "verb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "περιμένω",
+      "περιμενω"
+    ],
+    "ru_answers": [
+      "жду",
+      "ждать"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "πινω",
+    "level": "A1",
+    "topic": "Глаголы",
+    "greek": "πίνω",
+    "transcription": "",
+    "ru": "пью",
+    "part_of_speech": "verb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "πίνω",
+      "πινω"
+    ],
+    "ru_answers": [
+      "пью",
+      "пить"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "αργα",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "αργά",
+    "transcription": "",
+    "ru": "медленно",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "αργά",
+      "αργα"
+    ],
+    "ru_answers": [
+      "медленно"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "αργοτερα",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "αργότερα",
+    "transcription": "",
+    "ru": "позже",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "αργότερα",
+      "αργοτερα"
+    ],
+    "ru_answers": [
+      "позже"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ελληνικα",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "ελληνικά",
+    "transcription": "",
+    "ru": "по-гречески; греческий язык",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "ελληνικά",
+      "ελληνικα"
+    ],
+    "ru_answers": [
+      "по-гречески",
+      "греческий"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ενταξει",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "εντάξει",
+    "transcription": "",
+    "ru": "в порядке, ладно",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "εντάξει",
+      "ενταξει"
+    ],
+    "ru_answers": [
+      "в порядке",
+      "ладно",
+      "хорошо"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ετσι",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "έτσι",
+    "transcription": "",
+    "ru": "так",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "έτσι",
+      "ετσι"
+    ],
+    "ru_answers": [
+      "так"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "καλα",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "καλά",
+    "transcription": "",
+    "ru": "хорошо",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "καλά",
+      "καλα"
+    ],
+    "ru_answers": [
+      "хорошо"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "μετα",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "μετά",
+    "transcription": "",
+    "ru": "после, потом",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "μετά",
+      "μετα"
+    ],
+    "ru_answers": [
+      "после",
+      "потом"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "πιο",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "πιο",
+    "transcription": "",
+    "ru": "больше, более",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "πιο"
+    ],
+    "ru_answers": [
+      "больше",
+      "более"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "που",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "πού;",
+    "transcription": "",
+    "ru": "где?",
+    "part_of_speech": "question_adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "πού",
+      "που",
+      "πού;"
+    ],
+    "ru_answers": [
+      "где"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "απο-που",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "από πού;",
+    "transcription": "",
+    "ru": "откуда?",
+    "part_of_speech": "question_adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "από πού",
+      "απο που",
+      "από πού;"
+    ],
+    "ru_answers": [
+      "откуда"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "πωσ",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "πώς;",
+    "transcription": "",
+    "ru": "как?",
+    "part_of_speech": "question_adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "πώς",
+      "πωσ",
+      "πώς;"
+    ],
+    "ru_answers": [
+      "как"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "σημερα",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "σήμερα",
+    "transcription": "",
+    "ru": "сегодня",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "σήμερα",
+      "σημερα"
+    ],
+    "ru_answers": [
+      "сегодня"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "χαλια",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "χάλια",
+    "transcription": "",
+    "ru": "плохо, ужасно",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "χάλια",
+      "χαλια"
+    ],
+    "ru_answers": [
+      "плохо",
+      "ужасно"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "χτεσ-χθεσ",
+    "level": "A1",
+    "topic": "Наречия",
+    "greek": "χτες (χθες)",
+    "transcription": "",
+    "ru": "вчера",
+    "part_of_speech": "adverb",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "χτες",
+      "χτεσ",
+      "χθες",
+      "χθεσ"
+    ],
+    "ru_answers": [
+      "вчера"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "για",
+    "level": "A1",
+    "topic": "Предлоги",
+    "greek": "για",
+    "transcription": "",
+    "ru": "для",
+    "part_of_speech": "preposition",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "για"
+    ],
+    "ru_answers": [
+      "для",
+      "за",
+      "о"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "με",
+    "level": "A1",
+    "topic": "Предлоги",
+    "greek": "με",
+    "transcription": "",
+    "ru": "с",
+    "part_of_speech": "preposition",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "με"
+    ],
+    "ru_answers": [
+      "с"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "σε",
+    "level": "A1",
+    "topic": "Предлоги",
+    "greek": "σε",
+    "transcription": "",
+    "ru": "в, на",
+    "part_of_speech": "preposition",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "σε"
+    ],
+    "ru_answers": [
+      "в",
+      "на"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "με-λενε",
+    "level": "A1",
+    "topic": "Выражения",
+    "greek": "με λένε",
+    "transcription": "",
+    "ru": "меня зовут",
+    "part_of_speech": "phrase",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "με λένε",
+      "με λενε"
+    ],
+    "ru_answers": [
+      "меня зовут"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "τι-κανεισ",
+    "level": "A1",
+    "topic": "Выражения",
+    "greek": "τι κάνεις;",
+    "transcription": "",
+    "ru": "как дела?",
+    "part_of_speech": "phrase",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "τι κάνεις",
+      "τι κανεισ",
+      "τι κάνεις;"
+    ],
+    "ru_answers": [
+      "как дела"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "πωσ-εισαι",
+    "level": "A1",
+    "topic": "Выражения",
+    "greek": "πώς είσαι;",
+    "transcription": "",
+    "ru": "как ты?",
+    "part_of_speech": "phrase",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "πώς είσαι",
+      "πωσ εισαι",
+      "πώς είσαι;"
+    ],
+    "ru_answers": [
+      "как ты",
+      "как дела"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "μια-χαρα",
+    "level": "A1",
+    "topic": "Выражения",
+    "greek": "μια χαρά",
+    "transcription": "",
+    "ru": "отлично",
+    "part_of_speech": "phrase",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "μια χαρά",
+      "μια χαρα"
+    ],
+    "ru_answers": [
+      "отлично",
+      "все хорошо",
+      "всё хорошо"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "ετσι-κι-ετσι",
+    "level": "A1",
+    "topic": "Выражения",
+    "greek": "έτσι κι έτσι",
+    "transcription": "",
+    "ru": "так себе",
+    "part_of_speech": "phrase",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "έτσι κι έτσι",
+      "ετσι κι ετσι"
+    ],
+    "ru_answers": [
+      "так себе"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  },
+  {
+    "id": "πωσ-το-λενε-αυτο-ελληνικα",
+    "level": "A1",
+    "topic": "Выражения",
+    "greek": "πώς το λένε αυτό ελληνικά;",
+    "transcription": "",
+    "ru": "как это называется по-гречески?",
+    "part_of_speech": "phrase",
+    "gender": null,
+    "example_el": "",
+    "example_ru": "",
+    "greek_answers": [
+      "πώς το λένε αυτό ελληνικά",
+      "πωσ το λενε αυτο ελληνικα",
+      "πώς το λένε αυτό ελληνικά;"
+    ],
+    "ru_answers": [
+      "как это называется по-гречески",
+      "по-гречески"
+    ],
+    "source": "Ελληνικά για σας A1 — словарики из скриншотов"
+  }
+]
