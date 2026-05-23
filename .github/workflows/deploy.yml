@@ -23,10 +23,18 @@ jobs:
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
           DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
         run: |
+          if [ -z "$DEPLOY_HOST" ]; then
+            echo "::error::Missing GitHub secret DEPLOY_HOST"
+            exit 1
+          fi
+          if [ -z "$DEPLOY_SSH_KEY" ]; then
+            echo "::error::Missing GitHub secret DEPLOY_SSH_KEY"
+            exit 1
+          fi
           mkdir -p ~/.ssh
           printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p "${DEPLOY_PORT:-22}" "$DEPLOY_HOST" >> ~/.ssh/known_hosts
+          ssh-keyscan -H -p "${DEPLOY_PORT:-22}" "$DEPLOY_HOST" >> ~/.ssh/known_hosts
 
       - name: Upload release archive
         env:
@@ -34,6 +42,10 @@ jobs:
           DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
           DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
         run: |
+          if [ -z "$DEPLOY_HOST" ]; then
+            echo "::error::Missing GitHub secret DEPLOY_HOST"
+            exit 1
+          fi
           tar \
             --exclude='.git' \
             --exclude='.github' \
@@ -53,5 +65,9 @@ jobs:
           DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
         run: |
+          if [ -z "$DEPLOY_HOST" ]; then
+            echo "::error::Missing GitHub secret DEPLOY_HOST"
+            exit 1
+          fi
           ssh -i ~/.ssh/deploy_key -p "${DEPLOY_PORT:-22}" "${DEPLOY_USER:-root}@${DEPLOY_HOST}" \
             "DEPLOY_PATH='${DEPLOY_PATH:-/root/greek-bot}' bash -s" < scripts/deploy_server.sh

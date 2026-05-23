@@ -19,12 +19,15 @@ if [ -f "$APP_DIR/greek_bot.db" ]; then
   cp "$APP_DIR/greek_bot.db" /tmp/greek_bot.db.backup
 fi
 
-find "$APP_DIR" \
-  -mindepth 1 \
-  ! -name '.env' \
-  ! -name 'greek_bot.db' \
-  ! -name '.venv' \
-  -exec rm -rf {} +
+for item in "$APP_DIR"/* "$APP_DIR"/.[!.]* "$APP_DIR"/..?*; do
+  [ -e "$item" ] || continue
+  case "$(basename "$item")" in
+    .env|greek_bot.db|.venv)
+      continue
+      ;;
+  esac
+  rm -rf "$item"
+done
 
 tar -xzf "$RELEASE_ARCHIVE" -C "$APP_DIR"
 
