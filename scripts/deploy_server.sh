@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+APP_DIR="${DEPLOY_PATH:-/root/greek-bot}"
+RELEASE_ARCHIVE="/tmp/greek-bot-release.tar.gz"
+SERVICE_NAME="${SERVICE_NAME:-greek-bot}"
+
+if [ ! -f "$RELEASE_ARCHIVE" ]; then
+  echo "Release archive not found: $RELEASE_ARCHIVE" >&2
+  exit 1
+fi
+
+mkdir -p "$APP_DIR"
+
+if [ -f "$APP_DIR/.env" ]; then
+  cp "$APP_DIR/.env" /tmp/greek-bot.env.backup
+fi
+if [ -f "$APP_DIR/greek_bot.db" ]; then
+  cp "$APP_DIR/greek_bot.db" /tmp/greek_bot.db.backup
+fi
+
+find "$APP_DIR" \
+  -mindepth 1 \
+  ! -name '.env' \
+  ! -name 'greek_bot.db' \
+  ! -name '.venv' \
+  -exec rm -rf {} +
+
+tar -xzf "$RELEASE_ARCHIVE" -C "$APP_DIR"
+
+if [ -f /tmp/greek-bot.env.backup ]; then
+  mv /tmp/greek-bot.env.backup "$APP_DIR/.env"
+fi
+if [ -f /tmp/greek_bot.db.backup ]; then
+  mv /tmp/greek_bot.db.backup "$APP_DIR/greek_bot.db"
+fi
+
+cd "$APP_DIR"
+
+if ! python3 -m venv --help >/dev/null 2>&1; then
+  apt-get update
+  apt-get install -y python3 python3-venv python3-pip
+fi
+
+if [ ! -d ".venv" ]; then
+  python3 -m venv .venv
+fi
+
+.venv/bin/python -m pip install --upgrade pip
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/alembic upgrade head
+
+systemctl restart "$SERVICE_NAME"
+systemctl --no-pager --full status "$SERVICE_NAME"

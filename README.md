@@ -63,3 +63,15 @@ uvicorn app.admin_web.main:app --host 127.0.0.1 --port 8000
 Open `http://127.0.0.1:8000` and log in with `ADMIN_WEB_PASSWORD` from `.env`.
 
 On the server, keep it bound to `127.0.0.1` and expose it through Nginx + HTTPS or an SSH tunnel.
+
+## Auto Deploy
+
+Pushes to `main` can deploy automatically through GitHub Actions. Add these repository secrets:
+
+- `DEPLOY_HOST`: server IP, for example `46.225.185.193`
+- `DEPLOY_USER`: usually `root`
+- `DEPLOY_PORT`: usually `22`
+- `DEPLOY_PATH`: usually `/root/greek-bot`
+- `DEPLOY_SSH_KEY`: private SSH key that can connect to the server
+
+The workflow uploads the code, preserves `.env`, `greek_bot.db`, and `.venv`, installs dependencies, runs migrations, and restarts `greek-bot.service`.
