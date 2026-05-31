@@ -1,3 +1,5 @@
+from typing import Any
+
 from aiogram import F, Router
 from aiogram.exceptions import TelegramBadRequest, TelegramForbiddenError
 from aiogram.filters import BaseFilter
@@ -22,7 +24,10 @@ _sentence_tasks: dict[int, tuple[int, int | None]] = {}
 
 
 class SentenceTaskFilter(BaseFilter):
-    async def __call__(self, message: Message, db_user: User) -> bool:
+    async def __call__(self, message: Message, **data: Any) -> bool:
+        db_user: User | None = data.get("db_user")
+        if db_user is None:
+            return False
         return db_user.id in _sentence_tasks
 
 
