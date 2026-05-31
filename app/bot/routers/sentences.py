@@ -8,6 +8,7 @@ from app.bot.keyboards.main_menu import main_menu_keyboard
 from app.bot.keyboards.sentences import sentence_result_keyboard, sentence_task_keyboard
 from app.models import User
 from app.repositories import attempts_repo, progress_repo
+from app.services.audio_service import delete_transient_user_messages, remember_transient_user_message
 from app.services.sentences_service import (
     Sentence,
     get_sentence,
@@ -85,6 +86,7 @@ async def sentences_command(message: Message, session: AsyncSession, db_user: Us
 
 @router.callback_query(F.data == "sentences:start")
 async def sentences_start(callback: CallbackQuery, session: AsyncSession, db_user: User) -> None:
+    await delete_transient_user_messages(callback.bot, callback.message.chat.id, callback.message.message_id)
     await progress_repo.clear_current_task(session, db_user.id)
     index, sentence = await create_sentence_task(session, db_user.id, bot_message_id=callback.message.message_id)
     if sentence is None or index is None:
@@ -111,6 +113,7 @@ async def sentences_show(callback: CallbackQuery, session: AsyncSession, db_user
 
 @router.callback_query(F.data.startswith("sentences:next:"))
 async def sentences_next(callback: CallbackQuery, session: AsyncSession, db_user: User) -> None:
+    await delete_transient_user_messages(callback.bot, callback.message.chat.id, callback.message.message_id)
     current_index = int(callback.data.rsplit(":", 1)[-1])
     index = next_sentence_index(current_index)
     index, sentence = await create_sentence_task(
@@ -141,14 +144,18 @@ async def handle_sentence_answer(message: Message, session: AsyncSession, db_use
     is_correct = is_correct_sentence_answer(sentence, message.text or "")
     await attempts_repo.touch_daily_activity(session, db_user.id)
     _sentence_tasks.pop(db_user.id, None)
-    await delete_user_answer(message)
     await delete_bot_task_message(message, bot_message_id)
 
     if is_correct:
-        await message.answer(f"✅ Верно!\n\n{sentence_result_text(sentence)}", reply_markup=sentence_result_keyboard(index))
+        result_message = await message.answer(
+            f"✅ Верно!\n\n{sentence_result_text(sentence)}",
+            reply_markup=sentence_result_keyboard(index),
+        )
+        remember_transient_user_message(message.chat.id, result_message.message_id, message.message_id)
         return
 
-    await message.answer(
+    result_message = await message.answer(
         f"❌ Неверно.\n\nПравильный ответ:\n{sentence_result_text(sentence)}",
         reply_markup=sentence_result_keyboard(index),
     )
+    remember_transient_user_message(message.chat.id, result_message.message_id, message.message_id)
