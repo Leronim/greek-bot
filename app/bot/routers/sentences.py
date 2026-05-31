@@ -1,8 +1,5 @@
-from typing import Any
-
 from aiogram import F, Router
 from aiogram.exceptions import TelegramBadRequest, TelegramForbiddenError
-from aiogram.filters import BaseFilter
 from aiogram.filters import Command
 from aiogram.types import CallbackQuery, Message
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -23,16 +20,12 @@ router = Router()
 _sentence_tasks: dict[int, tuple[int, int | None]] = {}
 
 
-class SentenceTaskFilter(BaseFilter):
-    async def __call__(self, message: Message, **data: Any) -> bool:
-        db_user: User | None = data.get("db_user")
-        if db_user is None:
-            return False
-        return db_user.id in _sentence_tasks
-
-
 def clear_sentence_task(user_id: int) -> None:
     _sentence_tasks.pop(user_id, None)
+
+
+def has_sentence_task(user_id: int) -> bool:
+    return user_id in _sentence_tasks
 
 
 def sentence_task_text(sentence: Sentence) -> str:
@@ -133,7 +126,6 @@ async def sentences_next(callback: CallbackQuery, session: AsyncSession, db_user
     await callback.answer()
 
 
-@router.message(SentenceTaskFilter(), F.text & ~F.text.startswith("/"))
 async def handle_sentence_answer(message: Message, session: AsyncSession, db_user: User) -> None:
     task = _sentence_tasks.get(db_user.id)
     if task is None:
