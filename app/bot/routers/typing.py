@@ -5,6 +5,7 @@ from aiogram.exceptions import TelegramBadRequest, TelegramForbiddenError
 from aiogram.filters import Command
 from aiogram.types import CallbackQuery, Message
 
+from app.bot.filters.current_task import CurrentTaskFilter
 from app.bot.keyboards.main_menu import main_menu_keyboard
 from app.bot.keyboards.typing import after_typing_keyboard, typing_mode_keyboard
 from app.models import User
@@ -108,12 +109,9 @@ async def typing_example(callback: CallbackQuery, session: AsyncSession, db_user
     await callback.answer()
 
 
-@router.message(F.text & ~F.text.startswith("/"))
+@router.message(CurrentTaskFilter("typing"), F.text & ~F.text.startswith("/"))
 async def handle_text_answer(message: Message, session: AsyncSession, db_user: User) -> None:
     task = await progress_repo.get_current_task(session, db_user.id)
-    if task is None or task.task_type != "typing":
-        await message.answer("Выбери режим в меню, и я дам задание.", reply_markup=main_menu_keyboard())
-        return
 
     user_answer = message.text or ""
     is_correct, word = await typing_service.check_typing_answer(session, db_user.id, task, user_answer)

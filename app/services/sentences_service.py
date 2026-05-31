@@ -4,6 +4,8 @@ from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
 
+from app.utils.normalize import normalize_greek
+
 
 SENTENCES_PATH = Path("data/sentences_a1.json")
 
@@ -45,3 +47,7 @@ def next_sentence_index(index: int) -> int:
     if not sentences:
         return 0
     return (index + 1) % len(sentences)
+
+
+def is_correct_sentence_answer(sentence: Sentence, answer: str) -> bool:
+    return normalize_greek(answer) == normalize_greek(sentence.greek)
