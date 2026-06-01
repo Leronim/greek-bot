@@ -8,7 +8,7 @@ from app.bot.keyboards.main_menu import main_menu_keyboard
 from app.bot.keyboards.sentences import sentence_result_keyboard, sentence_task_keyboard
 from app.models import User
 from app.repositories import attempts_repo, progress_repo
-from app.services.audio_service import delete_transient_user_messages, remember_transient_user_message
+from app.services.audio_service import delete_transient_audio, delete_transient_user_messages, remember_transient_user_message
 from app.services.sentences_service import (
     Sentence,
     get_sentence,
@@ -86,6 +86,7 @@ async def sentences_command(message: Message, session: AsyncSession, db_user: Us
 
 @router.callback_query(F.data == "sentences:start")
 async def sentences_start(callback: CallbackQuery, session: AsyncSession, db_user: User) -> None:
+    await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     await delete_transient_user_messages(callback.bot, callback.message.chat.id, callback.message.message_id)
     await progress_repo.clear_current_task(session, db_user.id)
     index, sentence = await create_sentence_task(session, db_user.id, bot_message_id=callback.message.message_id)
@@ -98,6 +99,7 @@ async def sentences_start(callback: CallbackQuery, session: AsyncSession, db_use
 
 @router.callback_query(F.data.startswith("sentences:show:"))
 async def sentences_show(callback: CallbackQuery, session: AsyncSession, db_user: User) -> None:
+    await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     index = int(callback.data.rsplit(":", 1)[-1])
     sentence = get_sentence(index)
     _sentence_tasks.pop(db_user.id, None)
@@ -113,6 +115,7 @@ async def sentences_show(callback: CallbackQuery, session: AsyncSession, db_user
 
 @router.callback_query(F.data.startswith("sentences:next:"))
 async def sentences_next(callback: CallbackQuery, session: AsyncSession, db_user: User) -> None:
+    await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     await delete_transient_user_messages(callback.bot, callback.message.chat.id, callback.message.message_id)
     current_index = int(callback.data.rsplit(":", 1)[-1])
     index = next_sentence_index(current_index)

@@ -5,6 +5,7 @@ from aiogram.exceptions import TelegramBadRequest, TelegramForbiddenError
 from aiogram.types import FSInputFile
 
 from app.models import Word
+from app.services.sentences_service import Sentence
 
 
 AUDIO_DIR = Path("data/audio")
@@ -25,6 +26,17 @@ def word_audio_file(word: Word) -> FSInputFile | None:
     if not path.is_file():
         return None
     return FSInputFile(path, filename=f"{word.slug}.mp3")
+
+
+def sentence_audio_path(sentence: Sentence) -> Path:
+    return AUDIO_DIR / "sentences" / f"{sentence.id}.mp3"
+
+
+def sentence_audio_file(sentence: Sentence) -> FSInputFile | None:
+    path = sentence_audio_path(sentence)
+    if not path.is_file():
+        return None
+    return FSInputFile(path, filename=f"{sentence.id}.mp3")
 
 
 def remember_transient_audio(chat_id: int, anchor_message_id: int, audio_message_id: int) -> None:
