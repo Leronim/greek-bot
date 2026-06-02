@@ -17,8 +17,8 @@ from app.services.audio_service import (
 )
 from app.services.sentences_service import (
     Sentence,
+    check_sentence_answer,
     get_sentence,
-    is_correct_sentence_answer,
     next_sentence_index,
     random_sentence_index,
 )
@@ -162,16 +162,23 @@ async def handle_listening_answer(message: Message, session: AsyncSession, db_us
         await message.answer("Фраза не найдена.", reply_markup=main_menu_keyboard())
         return
 
-    is_correct = is_correct_sentence_answer(sentence, message.text or "")
+    answer_check = check_sentence_answer(sentence, message.text or "")
     await attempts_repo.touch_daily_activity(session, db_user.id)
     _listening_tasks.pop(db_user.id, None)
     await delete_bot_task_message(message, bot_message_id)
     if bot_message_id is not None:
         await delete_transient_audio(message.bot, message.chat.id, bot_message_id)
 
-    if is_correct:
+    if answer_check.is_correct:
         result_message = await message.answer(
             f"✅ Верно!\n\n{listening_result_text(sentence)}",
+            reply_markup=listening_result_keyboard(index),
+        )
+    elif answer_check.is_almost:
+        result_message = await message.answer(
+            "🟡 Почти верно.\n\n"
+            f"Твой ответ:\n{message.text or ''}\n\n"
+            f"Правильно:\n{listening_result_text(sentence)}",
             reply_markup=listening_result_keyboard(index),
         )
     else:
