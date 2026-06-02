@@ -114,3 +114,21 @@ async def play_sentence_audio(callback: CallbackQuery) -> None:
     audio_message = await callback.message.answer_audio(audio=audio, title=sentence.greek, performer="Greek TTS")
     remember_transient_audio(callback.message.chat.id, callback.message.message_id, audio_message.message_id)
     await callback.answer()
+
+
+@router.callback_query(F.data.startswith("audio:listening:sentence:"))
+async def play_listening_sentence_audio(callback: CallbackQuery) -> None:
+    index = int(callback.data.rsplit(":", 1)[-1])
+    sentence = get_sentence(index)
+    if sentence is None:
+        await callback.answer("Фраза не найдена", show_alert=True)
+        return
+
+    audio = sentence_audio_file(sentence)
+    if audio is None:
+        await callback.answer("Аудио ещё не создано", show_alert=True)
+        return
+
+    audio_message = await callback.message.answer_audio(audio=audio, title="Аудирование", performer="Greek TTS")
+    remember_transient_audio(callback.message.chat.id, callback.message.message_id, audio_message.message_id)
+    await callback.answer()
