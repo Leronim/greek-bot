@@ -77,3 +77,17 @@ async def recent_attempt_word_ids(session: AsyncSession, user_id: int, task_type
             seen.add(word_id)
             word_ids.append(word_id)
     return word_ids
+
+
+async def last_wrong_attempt(session: AsyncSession, user_id: int, word_id: int) -> AnswerAttempt | None:
+    result = await session.execute(
+        select(AnswerAttempt)
+        .where(
+            AnswerAttempt.user_id == user_id,
+            AnswerAttempt.word_id == word_id,
+            AnswerAttempt.is_correct.is_(False),
+        )
+        .order_by(AnswerAttempt.created_at.desc(), AnswerAttempt.id.desc())
+        .limit(1)
+    )
+    return result.scalar_one_or_none()
