@@ -13,9 +13,6 @@ def main_menu_keyboard() -> InlineKeyboardMarkup:
                 InlineKeyboardButton(text="🧠 Тест", callback_data="quiz:start"),
             ],
             [InlineKeyboardButton(text="💬 Предложения", callback_data="sentences:start")],
-            [
-                InlineKeyboardButton(text="📊 Прогресс", callback_data="stats:show"),
-                InlineKeyboardButton(text="⚙️ Настройки", callback_data="settings:show"),
-            ],
+            [InlineKeyboardButton(text="📊 Прогресс", callback_data="stats:show")],
         ]
     )
