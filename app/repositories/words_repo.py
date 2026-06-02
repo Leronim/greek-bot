@@ -2,7 +2,7 @@ from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
-from app.models import Topic, UserWordProgress, Word, WordAnswer
+from app.models import AnswerAttempt, Topic, UserWordProgress, Word, WordAnswer
 from app.utils.time import utcnow
 
 
@@ -104,6 +104,34 @@ async def get_random_word(
         .options(selectinload(Word.answers), selectinload(Word.examples), selectinload(Word.topic))
         .where(Word.is_active.is_(True), Word.level.in_(levels))
         .order_by(func.random())
+        .limit(1)
+    )
+    if exclude_word_ids:
+        query = query.where(~Word.id.in_(exclude_word_ids))
+    result = await session.execute(query)
+    return result.scalar_one_or_none()
+
+
+async def get_mistake_word(
+    session: AsyncSession,
+    user_id: int,
+    level_mode: str,
+    exclude_word_ids: list[int] | None = None,
+) -> Word | None:
+    levels = levels_for_mode(level_mode)
+    wrong_count = func.count(AnswerAttempt.id)
+    query = (
+        select(Word)
+        .join(AnswerAttempt, AnswerAttempt.word_id == Word.id)
+        .options(selectinload(Word.answers), selectinload(Word.examples), selectinload(Word.topic))
+        .where(
+            AnswerAttempt.user_id == user_id,
+            AnswerAttempt.is_correct.is_(False),
+            Word.is_active.is_(True),
+            Word.level.in_(levels),
+        )
+        .group_by(Word.id)
+        .order_by(wrong_count.desc(), func.random())
         .limit(1)
     )
     if exclude_word_ids:
