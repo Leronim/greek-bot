@@ -79,6 +79,7 @@ async def build_admin_stats_text(session: AsyncSession) -> str:
     total_users = await session.scalar(select(func.count(User.id))) or 0
     total_words = await session.scalar(select(func.count(Word.id)).where(Word.is_active.is_(True))) or 0
     rows = await admin_daily_activity(session, limit=7)
+    users = await admin_users_activity(session, limit=20)
     lines = [
         "📈 Статистика бота",
         "",
@@ -94,4 +95,45 @@ async def build_admin_stats_text(session: AsyncSession) -> str:
             f"{row['date']}: {row['active_users']} уник., "
             f"{row['attempts']} действий, точность {row['accuracy']}%"
         )
+    lines.extend(["", "Пользователи:"])
+    if not users:
+        lines.append("Пользователей пока нет.")
+    for user in users:
+        lines.append(
+            f"{user['name']} | id {user['telegram_id']} | "
+            f"дней {user['active_days']} | посл. {user['last_active']}"
+        )
     return "\n".join(lines)
+
+
+async def admin_users_activity(session: AsyncSession, limit: int = 20) -> list[dict[str, int | str]]:
+    last_activity = func.max(DailyStats.date)
+    active_days = func.count(DailyStats.date)
+    result = await session.execute(
+        select(
+            User.telegram_id,
+            User.username,
+            User.first_name,
+            active_days.label("active_days"),
+            last_activity.label("last_active"),
+        )
+        .outerjoin(DailyStats, DailyStats.user_id == User.id)
+        .group_by(User.id)
+        .order_by(last_activity.desc(), User.id.desc())
+        .limit(limit)
+    )
+
+    users = []
+    for row in result.all():
+        username = f"@{row.username}" if row.username else ""
+        first_name = row.first_name or ""
+        name = " / ".join(part for part in [username, first_name] if part) or "без username"
+        users.append(
+            {
+                "telegram_id": int(row.telegram_id),
+                "name": name,
+                "active_days": int(row.active_days or 0),
+                "last_active": row.last_active.isoformat() if row.last_active else "нет",
+            }
+        )
+    return users
