@@ -1,5 +1,6 @@
 import argparse
 import asyncio
+import re
 
 import edge_tts
 from sqlalchemy import select
@@ -11,6 +12,10 @@ from app.services.sentences_service import load_sentences
 
 
 DEFAULT_VOICE = "el-GR-AthinaNeural"
+
+
+def tts_sentence_text(text: str) -> str:
+    return re.sub(r"^Α([,!])", r"Αα\1", text)
 
 
 async def generate_audio(voice: str, overwrite: bool, limit: int | None) -> None:
@@ -48,7 +53,7 @@ async def generate_audio(voice: str, overwrite: bool, limit: int | None) -> None
             sentence_skipped += 1
             continue
 
-        communicate = edge_tts.Communicate(sentence.greek, voice)
+        communicate = edge_tts.Communicate(tts_sentence_text(sentence.greek), voice)
         await communicate.save(str(path))
         sentence_generated += 1
         print(f"generated {path}")
