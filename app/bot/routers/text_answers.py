@@ -3,7 +3,7 @@ from aiogram.types import Message
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.bot.keyboards.main_menu import main_menu_keyboard
-from app.bot.routers import sentences, typing
+from app.bot.routers import listening, sentences, typing
 from app.models import User
 from app.repositories import progress_repo
 
@@ -14,6 +14,10 @@ router = Router()
 async def handle_text_answer(message: Message, session: AsyncSession, db_user: User) -> None:
     if sentences.has_sentence_task(db_user.id):
         await sentences.handle_sentence_answer(message, session, db_user)
+        return
+
+    if listening.has_listening_task(db_user.id):
+        await listening.handle_listening_answer(message, session, db_user)
         return
 
     task = await progress_repo.get_current_task(session, db_user.id)
