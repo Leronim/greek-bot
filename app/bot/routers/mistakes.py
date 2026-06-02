@@ -35,12 +35,11 @@ async def mistake_context(session: AsyncSession, user_id: int, word) -> str:
     return f"\n\nПоследняя ошибка:\nБыло задание: {prompt}\nТвой ответ: {attempt.user_answer}\nПравильно: {correct_answer}"
 
 
-async def task_prompt(session: AsyncSession, user_id: int, word, direction: str) -> str:
-    context = await mistake_context(session, user_id, word)
+def task_prompt(word, direction: str) -> str:
     if direction == "ru_to_el":
-        return f"❌ Мои ошибки{context}\n\nНапиши по-гречески:\n\n🇷🇺 {word.ru}"
+        return f"❌ Мои ошибки\n\nНапиши по-гречески:\n\n🇷🇺 {word.ru}"
     transcription = f"\n🔊 {word.transcription}" if word.transcription else ""
-    return f"❌ Мои ошибки{context}\n\nПереведи на русский:\n\n🇬🇷 {word.greek}{transcription}"
+    return f"❌ Мои ошибки\n\nПереведи на русский:\n\n🇬🇷 {word.greek}{transcription}"
 
 
 def word_details(word) -> str:
@@ -72,7 +71,7 @@ async def mistakes_command(message: Message, session: AsyncSession, db_user: Use
     if word is None or direction is None:
         await message.answer("Пока нет ошибок для тренировки.", reply_markup=main_menu_keyboard())
         return
-    sent = await message.answer(await task_prompt(session, db_user.id, word, direction))
+    sent = await message.answer(task_prompt(word, direction))
     await progress_repo.set_current_task(session, db_user.id, "mistakes", word.id, direction, bot_message_id=sent.message_id)
 
 
@@ -93,7 +92,7 @@ async def mistakes_start(callback: CallbackQuery, session: AsyncSession, db_user
     if word is None or direction is None:
         await callback.message.edit_text("Пока нет ошибок для тренировки.", reply_markup=main_menu_keyboard())
     else:
-        await callback.message.edit_text(await task_prompt(session, db_user.id, word, direction))
+        await callback.message.edit_text(task_prompt(word, direction))
     await callback.answer()
 
 
@@ -109,7 +108,7 @@ async def mistakes_next(callback: CallbackQuery, session: AsyncSession, db_user:
     if word is None or direction is None:
         await callback.message.edit_text("Пока нет ошибок для тренировки.", reply_markup=main_menu_keyboard())
     else:
-        await callback.message.edit_text(await task_prompt(session, db_user.id, word, direction))
+        await callback.message.edit_text(task_prompt(word, direction))
     await callback.answer()
 
 
@@ -118,14 +117,15 @@ async def handle_text_answer(message: Message, session: AsyncSession, db_user: U
     user_answer = message.text or ""
     is_correct, word = await mistakes_service.check_mistake_answer(session, db_user.id, task, user_answer)
     await delete_bot_task_message(message, task.bot_message_id)
+    context = await mistake_context(session, db_user.id, word)
     if is_correct:
         result_message = await message.answer(
-            f"✅ Верно!\n\n{word_details(word)}",
+            f"✅ Верно!\n\n{word_details(word)}{context}",
             reply_markup=after_mistake_keyboard(word.id),
         )
     else:
         result_message = await message.answer(
-            f"❌ Неверно.\n\nПравильный ответ:\n{word_details(word)}",
+            f"❌ Неверно.\n\nПравильный ответ:\n{word_details(word)}{context}",
             reply_markup=after_mistake_keyboard(word.id),
         )
     remember_transient_user_message(message.chat.id, result_message.message_id, message.message_id)
