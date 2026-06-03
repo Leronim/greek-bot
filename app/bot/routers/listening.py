@@ -19,7 +19,7 @@ from app.services.sentences_service import (
     Sentence,
     check_sentence_answer,
     get_sentence,
-    next_sentence_index,
+    random_next_sentence_index,
     random_sentence_index,
 )
 
@@ -135,7 +135,7 @@ async def listening_next(callback: CallbackQuery, session: AsyncSession, db_user
     await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     await delete_transient_user_messages(callback.bot, callback.message.chat.id, callback.message.message_id)
     current_index = int(callback.data.rsplit(":", 1)[-1])
-    index = next_sentence_index(current_index)
+    index = random_next_sentence_index(current_index)
     index, sentence = await create_listening_task(
         session,
         db_user.id,

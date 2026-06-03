@@ -58,11 +58,16 @@ def random_sentence_index() -> int | None:
     return random.randrange(len(sentences))
 
 
-def next_sentence_index(index: int) -> int:
+def random_next_sentence_index(current_index: int) -> int:
     sentences = load_sentences()
     if not sentences:
         return 0
-    return (index + 1) % len(sentences)
+    if len(sentences) == 1:
+        return 0
+    next_index = random.randrange(len(sentences))
+    while next_index == current_index:
+        next_index = random.randrange(len(sentences))
+    return next_index
 
 
 def is_correct_sentence_answer(sentence: Sentence, answer: str) -> bool:
