@@ -32,3 +32,20 @@ class DailyStats(Base):
     wrong_count: Mapped[int] = mapped_column(default=0)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
+
+
+class SentenceProgress(Base):
+    __tablename__ = "sentence_progress"
+    __table_args__ = (UniqueConstraint("user_id", "sentence_id", "task_type", "direction"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    sentence_id: Mapped[str] = mapped_column(String(255), index=True)
+    task_type: Mapped[str] = mapped_column(String(32), index=True)
+    direction: Mapped[str] = mapped_column(String(32), index=True)
+    correct_streak: Mapped[int] = mapped_column(default=0)
+    correct_count: Mapped[int] = mapped_column(default=0)
+    wrong_count: Mapped[int] = mapped_column(default=0)
+    last_answer_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())

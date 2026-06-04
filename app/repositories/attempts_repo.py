@@ -79,6 +79,27 @@ async def recent_attempt_word_ids(session: AsyncSession, user_id: int, task_type
     return word_ids
 
 
+async def mastered_word_ids(
+    session: AsyncSession,
+    user_id: int,
+    task_type: str,
+    direction: str,
+    threshold: int = 5,
+) -> list[int]:
+    result = await session.execute(
+        select(AnswerAttempt.word_id)
+        .where(
+            AnswerAttempt.user_id == user_id,
+            AnswerAttempt.task_type == task_type,
+            AnswerAttempt.direction == direction,
+            AnswerAttempt.is_correct.is_(True),
+        )
+        .group_by(AnswerAttempt.word_id)
+        .having(func.count(AnswerAttempt.id) >= threshold)
+    )
+    return list(result.scalars())
+
+
 async def last_wrong_attempt(session: AsyncSession, user_id: int, word_id: int) -> AnswerAttempt | None:
     result = await session.execute(
         select(AnswerAttempt)

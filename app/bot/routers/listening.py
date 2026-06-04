@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.bot.keyboards.listening import listening_result_keyboard, listening_task_keyboard
 from app.bot.keyboards.main_menu import main_menu_keyboard
 from app.models import User
-from app.repositories import attempts_repo, progress_repo
+from app.repositories import attempts_repo, progress_repo, sentence_progress_repo
 from app.services.audio_service import (
     delete_transient_audio,
     delete_transient_user_messages,
@@ -15,12 +15,11 @@ from app.services.audio_service import (
     remember_transient_user_message,
     sentence_audio_file,
 )
+from app.services.sentence_progress_service import choose_sentence_index
 from app.services.sentences_service import (
     Sentence,
     check_sentence_answer,
     get_sentence,
-    random_next_sentence_index,
-    random_sentence_index,
 )
 
 router = Router()
@@ -70,7 +69,7 @@ async def create_listening_task(
     index: int | None = None,
 ) -> tuple[int | None, Sentence | None]:
     if index is None:
-        index = random_sentence_index()
+        index = await choose_sentence_index(session, user_id, task_type="listening", direction="audio_to_el")
     if index is None:
         return None, None
     sentence = get_sentence(index)
@@ -135,7 +134,13 @@ async def listening_next(callback: CallbackQuery, session: AsyncSession, db_user
     await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     await delete_transient_user_messages(callback.bot, callback.message.chat.id, callback.message.message_id)
     current_index = int(callback.data.rsplit(":", 1)[-1])
-    index = random_next_sentence_index(current_index)
+    index = await choose_sentence_index(
+        session,
+        db_user.id,
+        task_type="listening",
+        direction="audio_to_el",
+        exclude_index=current_index,
+    )
     index, sentence = await create_listening_task(
         session,
         db_user.id,
@@ -164,6 +169,14 @@ async def handle_listening_answer(message: Message, session: AsyncSession, db_us
 
     answer_check = check_sentence_answer(sentence, message.text or "")
     await attempts_repo.touch_daily_activity(session, db_user.id)
+    await sentence_progress_repo.record_sentence_answer(
+        session,
+        db_user.id,
+        sentence.id,
+        task_type="listening",
+        direction="audio_to_el",
+        is_exact_correct=answer_check.is_correct,
+    )
     _listening_tasks.pop(db_user.id, None)
     await delete_bot_task_message(message, bot_message_id)
     if bot_message_id is not None:

@@ -16,9 +16,27 @@ def resolve_direction(mode: str) -> str:
 
 RECENT_TYPING_LIMIT = 35
 NEW_WORD_CHANCE = 0.55
+WORD_MASTERY_THRESHOLD = 5
+MASTERED_WORD_CHANCE = 0.15
 
 
-async def choose_training_word(session: AsyncSession, user_id: int, hard_only: bool = False) -> Word | None:
+def merge_exclude_ids(*groups: list[int]) -> list[int]:
+    merged: list[int] = []
+    seen: set[int] = set()
+    for group in groups:
+        for item in group:
+            if item not in seen:
+                seen.add(item)
+                merged.append(item)
+    return merged
+
+
+async def choose_training_word(
+    session: AsyncSession,
+    user_id: int,
+    direction: str,
+    hard_only: bool = False,
+) -> Word | None:
     user_settings = await settings_repo.get_settings(session, user_id)
     recent_word_ids = await attempts_repo.recent_attempt_word_ids(
         session,
@@ -26,9 +44,23 @@ async def choose_training_word(session: AsyncSession, user_id: int, hard_only: b
         task_type="typing",
         limit=RECENT_TYPING_LIMIT,
     )
+    mastered_word_ids = await attempts_repo.mastered_word_ids(
+        session,
+        user_id,
+        task_type="typing",
+        direction=direction,
+        threshold=WORD_MASTERY_THRESHOLD,
+    )
+    mastered_exclude_ids = [] if random.random() < MASTERED_WORD_CHANCE else mastered_word_ids
+    exclude_groups = (
+        merge_exclude_ids(recent_word_ids, mastered_exclude_ids),
+        mastered_exclude_ids,
+        recent_word_ids,
+        [],
+    )
 
     if hard_only:
-        for exclude_word_ids in (recent_word_ids, []):
+        for exclude_word_ids in exclude_groups:
             word = await words_repo.get_due_word(
                 session,
                 user_id,
@@ -40,7 +72,7 @@ async def choose_training_word(session: AsyncSession, user_id: int, hard_only: b
                 return word
         return None
 
-    for exclude_word_ids in (recent_word_ids, []):
+    for exclude_word_ids in exclude_groups:
         prefer_new = random.random() < NEW_WORD_CHANCE
         strategies = (
             ("new", "random", "due")
@@ -85,10 +117,10 @@ async def create_typing_task(
     bot_message_id: int | None = None,
 ) -> tuple[Word | None, str | None]:
     user_settings = await settings_repo.get_settings(session, user_id)
-    word = await choose_training_word(session, user_id, hard_only=hard_only)
+    direction = direction or resolve_direction(user_settings.typing_direction)
+    word = await choose_training_word(session, user_id, direction=direction, hard_only=hard_only)
     if word is None:
         return None, None
-    direction = direction or resolve_direction(user_settings.typing_direction)
     await progress_repo.set_current_task(session, user_id, "typing", word.id, direction, bot_message_id=bot_message_id)
     return word, direction
 
