@@ -13,6 +13,13 @@ from app.services.audio_service import delete_transient_audio, delete_transient_
 from app.services import typing_service
 
 router = Router()
+_typing_modes: dict[int, str] = {}
+
+
+def direction_for_mode(mode: str | None) -> str | None:
+    if mode in {"ru_to_el", "el_to_ru"}:
+        return mode
+    return None
 
 
 def task_prompt(word, direction: str) -> str:
@@ -65,7 +72,8 @@ async def typing_start(callback: CallbackQuery, session: AsyncSession, db_user: 
     await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     await delete_transient_user_messages(callback.bot, callback.message.chat.id, callback.message.message_id)
     mode = callback.data.rsplit(":", 1)[-1]
-    direction = None if mode == "mixed" else mode
+    _typing_modes[db_user.id] = mode
+    direction = direction_for_mode(mode)
     word, resolved_direction = await typing_service.create_typing_task(
         session,
         db_user.id,
@@ -79,13 +87,17 @@ async def typing_start(callback: CallbackQuery, session: AsyncSession, db_user: 
     await callback.answer()
 
 
-@router.callback_query(F.data == "typing:next")
+@router.callback_query(F.data.startswith("typing:next"))
 async def typing_next(callback: CallbackQuery, session: AsyncSession, db_user: User) -> None:
     await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     await delete_transient_user_messages(callback.bot, callback.message.chat.id, callback.message.message_id)
+    parts = callback.data.split(":")
+    callback_direction = parts[2] if len(parts) == 3 else None
+    direction = direction_for_mode(callback_direction) or direction_for_mode(_typing_modes.get(db_user.id))
     word, direction = await typing_service.create_typing_task(
         session,
         db_user.id,
+        direction=direction,
         bot_message_id=callback.message.message_id,
     )
     if word is None or direction is None:
@@ -107,7 +119,8 @@ async def typing_example(callback: CallbackQuery, session: AsyncSession, db_user
         if word is None:
             await callback.message.edit_text("Слово не найдено.", reply_markup=main_menu_keyboard())
         else:
-            await callback.message.edit_text(word_details(word), reply_markup=after_typing_keyboard(word.id))
+            direction = task.direction if task is not None else direction_for_mode(_typing_modes.get(db_user.id))
+            await callback.message.edit_text(word_details(word), reply_markup=after_typing_keyboard(word.id, direction))
     await callback.answer()
 
 
@@ -118,12 +131,15 @@ async def handle_text_answer(message: Message, session: AsyncSession, db_user: U
     is_correct, word = await typing_service.check_typing_answer(session, db_user.id, task, user_answer)
     await delete_bot_task_message(message, task.bot_message_id)
     if is_correct:
-        result_message = await message.answer(f"✅ Верно!\n\n{word_details(word)}", reply_markup=after_typing_keyboard(word.id))
+        result_message = await message.answer(
+            f"✅ Верно!\n\n{word_details(word)}",
+            reply_markup=after_typing_keyboard(word.id, task.direction),
+        )
         remember_transient_user_message(message.chat.id, result_message.message_id, message.message_id)
         return
 
     result_message = await message.answer(
         f"❌ Неверно.\n\nПравильный ответ:\n{word_details(word)}",
-        reply_markup=after_typing_keyboard(word.id),
+        reply_markup=after_typing_keyboard(word.id, task.direction),
     )
     remember_transient_user_message(message.chat.id, result_message.message_id, message.message_id)
