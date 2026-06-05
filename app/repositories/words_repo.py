@@ -41,6 +41,8 @@ async def get_due_word(
     level_mode: str,
     hard_only: bool = False,
     exclude_word_ids: list[int] | None = None,
+    section_kind: str | None = None,
+    section_value: str | None = None,
 ) -> Word | None:
     levels = levels_for_mode(level_mode)
     query = (
@@ -60,6 +62,7 @@ async def get_due_word(
         query = query.where(UserWordProgress.is_hard.is_(True))
     if exclude_word_ids:
         query = query.where(~Word.id.in_(exclude_word_ids))
+    query = apply_section_filter(query, section_kind, section_value)
     result = await session.execute(query)
     return result.scalar_one_or_none()
 
@@ -69,6 +72,8 @@ async def get_new_word(
     user_id: int,
     level_mode: str,
     exclude_word_ids: list[int] | None = None,
+    section_kind: str | None = None,
+    section_value: str | None = None,
 ) -> Word | None:
     levels = levels_for_mode(level_mode)
     query = (
@@ -88,6 +93,7 @@ async def get_new_word(
     )
     if exclude_word_ids:
         query = query.where(~Word.id.in_(exclude_word_ids))
+    query = apply_section_filter(query, section_kind, section_value)
     result = await session.execute(query)
     return result.scalar_one_or_none()
 
@@ -97,6 +103,8 @@ async def get_random_word(
     user_id: int,
     level_mode: str,
     exclude_word_ids: list[int] | None = None,
+    section_kind: str | None = None,
+    section_value: str | None = None,
 ) -> Word | None:
     levels = levels_for_mode(level_mode)
     query = (
@@ -108,8 +116,22 @@ async def get_random_word(
     )
     if exclude_word_ids:
         query = query.where(~Word.id.in_(exclude_word_ids))
+    query = apply_section_filter(query, section_kind, section_value)
     result = await session.execute(query)
     return result.scalar_one_or_none()
+
+
+def apply_section_filter(query, section_kind: str | None, section_value: str | None):
+    if not section_kind or not section_value:
+        return query
+    if section_kind == "topic":
+        return query.join(Topic, Topic.id == Word.topic_id).where(Topic.title == section_value)
+    if section_kind == "lesson":
+        return query.where(
+            (Word.lesson == section_value)
+            | (Word.lessons.like(f'%"{section_value}"%'))
+        )
+    return query
 
 
 async def get_mistake_word(

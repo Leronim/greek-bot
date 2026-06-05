@@ -35,6 +35,7 @@ async def upsert_word(session: AsyncSession, item: dict[str, Any]) -> int:
     slug = item["id"]
     existing = await find_word_by_slug(session, slug)
     topic = await get_or_create_topic(session, item["level"], item["topic"])
+    lessons = _serialize_lessons(item)
 
     if existing is None:
         word = Word(
@@ -46,6 +47,8 @@ async def upsert_word(session: AsyncSession, item: dict[str, Any]) -> int:
             ru=item["ru"],
             part_of_speech=item.get("part_of_speech"),
             gender=item.get("gender"),
+            lesson=item.get("lesson"),
+            lessons=lessons,
             is_active=item.get("is_active", True),
         )
         session.add(word)
@@ -60,12 +63,25 @@ async def upsert_word(session: AsyncSession, item: dict[str, Any]) -> int:
         word.ru = item["ru"]
         word.part_of_speech = item.get("part_of_speech")
         word.gender = item.get("gender")
+        word.lesson = item.get("lesson")
+        word.lessons = lessons
         word.is_active = item.get("is_active", True)
         imported = 0
 
     await _replace_answers(session, word, item)
     await _replace_examples(session, word, item)
     return imported
+
+
+def _serialize_lessons(item: dict[str, Any]) -> str | None:
+    lessons: list[str] = []
+    lesson = item.get("lesson")
+    if lesson:
+        lessons.append(lesson)
+    for value in item.get("lessons") or []:
+        if value not in lessons:
+            lessons.append(value)
+    return json.dumps(lessons, ensure_ascii=False) if lessons else None
 
 
 async def _replace_answers(session: AsyncSession, word: Word, item: dict[str, Any]) -> None:

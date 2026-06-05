@@ -18,7 +18,8 @@ def main_menu_keyboard() -> InlineKeyboardMarkup:
             ],
             [
                 InlineKeyboardButton(text="❌ Мои ошибки", callback_data="mistakes:start"),
-                InlineKeyboardButton(text="📊 Прогресс", callback_data="stats:show"),
+                InlineKeyboardButton(text="📂 Разделы", callback_data="sections:menu"),
             ],
+            [InlineKeyboardButton(text="📊 Прогресс", callback_data="stats:show")],
         ]
     )

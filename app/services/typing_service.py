@@ -5,6 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.models import UserCurrentTask, Word
 from app.repositories import attempts_repo, progress_repo, settings_repo, words_repo
 from app.services.progress_service import apply_answer_result
+from app.services.section_service import WordSection
 from app.utils.normalize import normalize_answer
 
 
@@ -36,6 +37,7 @@ async def choose_training_word(
     user_id: int,
     direction: str,
     hard_only: bool = False,
+    section: WordSection | None = None,
 ) -> Word | None:
     user_settings = await settings_repo.get_settings(session, user_id)
     recent_word_ids = await attempts_repo.recent_attempt_word_ids(
@@ -67,6 +69,8 @@ async def choose_training_word(
                 user_settings.level_mode,
                 hard_only=True,
                 exclude_word_ids=exclude_word_ids,
+                section_kind=section.kind if section else None,
+                section_value=section.value if section else None,
             )
             if word is not None:
                 return word
@@ -87,6 +91,8 @@ async def choose_training_word(
                     user_id,
                     user_settings.level_mode,
                     exclude_word_ids=exclude_word_ids,
+                    section_kind=section.kind if section else None,
+                    section_value=section.value if section else None,
                 )
             elif strategy == "due":
                 word = await words_repo.get_due_word(
@@ -94,6 +100,8 @@ async def choose_training_word(
                     user_id,
                     user_settings.level_mode,
                     exclude_word_ids=exclude_word_ids,
+                    section_kind=section.kind if section else None,
+                    section_value=section.value if section else None,
                 )
             else:
                 word = await words_repo.get_random_word(
@@ -101,6 +109,8 @@ async def choose_training_word(
                     user_id,
                     user_settings.level_mode,
                     exclude_word_ids=exclude_word_ids,
+                    section_kind=section.kind if section else None,
+                    section_value=section.value if section else None,
                 )
 
             if word is not None:
@@ -115,10 +125,11 @@ async def create_typing_task(
     direction: str | None = None,
     hard_only: bool = False,
     bot_message_id: int | None = None,
+    section: WordSection | None = None,
 ) -> tuple[Word | None, str | None]:
     user_settings = await settings_repo.get_settings(session, user_id)
     direction = direction or resolve_direction(user_settings.typing_direction)
-    word = await choose_training_word(session, user_id, direction=direction, hard_only=hard_only)
+    word = await choose_training_word(session, user_id, direction=direction, hard_only=hard_only, section=section)
     if word is None:
         return None, None
     await progress_repo.set_current_task(session, user_id, "typing", word.id, direction, bot_message_id=bot_message_id)

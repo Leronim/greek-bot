@@ -10,7 +10,7 @@ from app.bot.keyboards.typing import after_typing_keyboard, typing_mode_keyboard
 from app.models import User
 from app.repositories import progress_repo, words_repo
 from app.services.audio_service import delete_transient_audio, delete_transient_user_messages, remember_transient_user_message
-from app.services import typing_service
+from app.services import section_service, typing_service
 
 router = Router()
 _typing_modes: dict[int, str] = {}
@@ -27,6 +27,11 @@ def task_prompt(word, direction: str) -> str:
         return f"✍️ Напиши по-гречески:\n\n🇷🇺 {word.ru}"
     transcription = f"\n🔊 {word.transcription}" if word.transcription else ""
     return f"✍️ Переведи на русский:\n\n🇬🇷 {word.greek}{transcription}"
+
+
+def section_label(user_id: int) -> str:
+    section = section_service.get_user_section(user_id)
+    return f"📂 {section.title}\n\n" if section else ""
 
 
 def word_details(word) -> str:
@@ -55,14 +60,16 @@ async def delete_bot_task_message(message: Message, task_message_id: int | None)
 
 
 @router.message(Command("typing"))
-async def typing_command(message: Message) -> None:
+async def typing_command(message: Message, db_user: User) -> None:
+    section_service.clear_user_section(db_user.id)
     await message.answer("✍️ Написать ответ\n\nВыбери режим:", reply_markup=typing_mode_keyboard())
 
 
 @router.callback_query(F.data == "typing:menu")
-async def typing_menu(callback: CallbackQuery) -> None:
+async def typing_menu(callback: CallbackQuery, db_user: User) -> None:
     await delete_transient_audio(callback.bot, callback.message.chat.id, callback.message.message_id)
     await delete_transient_user_messages(callback.bot, callback.message.chat.id, callback.message.message_id)
+    section_service.clear_user_section(db_user.id)
     await callback.message.edit_text("✍️ Написать ответ\n\nВыбери режим:", reply_markup=typing_mode_keyboard())
     await callback.answer()
 
@@ -79,11 +86,12 @@ async def typing_start(callback: CallbackQuery, session: AsyncSession, db_user: 
         db_user.id,
         direction=direction,
         bot_message_id=callback.message.message_id,
+        section=section_service.get_user_section(db_user.id),
     )
     if word is None or resolved_direction is None:
         await callback.message.edit_text("Пока нет доступных слов. Добавь слова через импорт.", reply_markup=main_menu_keyboard())
     else:
-        await callback.message.edit_text(task_prompt(word, resolved_direction))
+        await callback.message.edit_text(f"{section_label(db_user.id)}{task_prompt(word, resolved_direction)}")
     await callback.answer()
 
 
@@ -99,11 +107,12 @@ async def typing_next(callback: CallbackQuery, session: AsyncSession, db_user: U
         db_user.id,
         direction=direction,
         bot_message_id=callback.message.message_id,
+        section=section_service.get_user_section(db_user.id),
     )
     if word is None or direction is None:
         await callback.message.edit_text("Нет слов для тренировки.", reply_markup=main_menu_keyboard())
     else:
-        await callback.message.edit_text(task_prompt(word, direction))
+        await callback.message.edit_text(f"{section_label(db_user.id)}{task_prompt(word, direction)}")
     await callback.answer()
 
 
