@@ -20,6 +20,7 @@ def sections_keyboard() -> InlineKeyboardMarkup:
                 InlineKeyboardButton(text="Глава 5", callback_data="sections:set:lesson_5"),
                 InlineKeyboardButton(text="Глава 6", callback_data="sections:set:lesson_6"),
             ],
+            [InlineKeyboardButton(text="Глава 7", callback_data="sections:set:lesson_7")],
             [InlineKeyboardButton(text="Все слова", callback_data="sections:clear")],
             [InlineKeyboardButton(text="В меню", callback_data="menu:main")],
         ]

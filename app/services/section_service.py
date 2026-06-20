@@ -17,6 +17,7 @@ SECTIONS: dict[str, WordSection] = {
     "lesson_4": WordSection(kind="lesson", value="Урок 4", title="Глава 4"),
     "lesson_5": WordSection(kind="lesson", value="Урок 5", title="Глава 5"),
     "lesson_6": WordSection(kind="lesson", value="Урок 6", title="Глава 6"),
+    "lesson_7": WordSection(kind="lesson", value="Урок 7", title="Глава 7"),
 }
 
 _user_sections: dict[int, WordSection] = {}
